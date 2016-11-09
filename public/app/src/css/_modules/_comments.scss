@@ -1,0 +1,58 @@
+#commentsModal {
+  .modal-content {
+    .chip {
+    }
+    p {
+      margin: 0;
+    }
+
+    textarea {
+      line-height: 1em;
+      min-height: 1em;
+      height: 1em;
+    }
+    h4 {
+      font-size: 1.1rem;
+      margin: 0;
+    }
+    .form-holder {
+
+      .recent-comments {
+        .collection-item {
+          padding: 5px;
+        }
+      }
+    }
+    .collection-item {
+      border: none;
+      padding: 0;
+      .comment {
+        background-color: rgba(84, 134, 196, 0.41);
+        padding: 10px;
+        font-size: 12px;
+        border-radius: 15px;
+      }
+      .user-mail {
+        color: rgba(0,0,0,1);
+        font-size: 11px;
+        float: right;
+        font-weight: 400;
+        background-color: rgba(84, 134, 196, 0.27);
+      }
+      .comment-time {
+        text-align: right;
+        font-size: 9px;
+        font-style: italic;
+        margin-right: 15px;
+      }
+    }
+    .replies-bg {
+      margin-top: 25px;
+    }
+  }
+}
+
+
+#commentsModal.modal{
+  padding: 15px;
+}

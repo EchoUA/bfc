@@ -1,0 +1,220 @@
+//inputs view colors and appearance fixed in to project styles
+input:not([type]), input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], textarea.materialize-textarea {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #1a1d29;
+  border-radius: 0;
+  outline: 0;
+  height: 3rem;
+  width: 100%;
+  font-size: 1rem;
+  margin: 0 0 20px;
+  padding: 0;
+  box-shadow: none;
+  box-sizing: content-box;
+  transition: all .3s;
+}
+
+input:not([type]):focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=search]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=url]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #4d81c2;
+  box-shadow: 0 1px 0 0 #4d81c2;
+}
+
+input:not([type]):focus:not([readonly]) + label, input[type=date]:focus:not([readonly]) + label, input[type=datetime-local]:focus:not([readonly]) + label, input[type=datetime]:focus:not([readonly]) + label, input[type=email]:focus:not([readonly]) + label, input[type=number]:focus:not([readonly]) + label, input[type=password]:focus:not([readonly]) + label, input[type=search]:focus:not([readonly]) + label, input[type=tel]:focus:not([readonly]) + label, input[type=text]:focus:not([readonly]) + label, input[type=time]:focus:not([readonly]) + label, input[type=url]:focus:not([readonly]) + label, textarea.materialize-textarea:focus:not([readonly]) + label {
+  color: #4d81c2;
+}
+
+input:not([type]).valid, input:not([type]):focus.valid, input[type=date].valid, input[type=date]:focus.valid, input[type=datetime-local].valid, input[type=datetime-local]:focus.valid, input[type=datetime].valid, input[type=datetime]:focus.valid, input[type=email].valid, input[type=email]:focus.valid, input[type=number].valid, input[type=number]:focus.valid, input[type=password].valid, input[type=password]:focus.valid, input[type=search].valid, input[type=search]:focus.valid, input[type=tel].valid, input[type=tel]:focus.valid, input[type=text].valid, input[type=text]:focus.valid, input[type=time].valid, input[type=time]:focus.valid, input[type=url].valid, input[type=url]:focus.valid, textarea.materialize-textarea.valid, textarea.materialize-textarea:focus.valid {
+  border-bottom: 1px solid #4d81c2;
+  box-shadow: 0 1px 0 0 #4d81c2;
+}
+
+input:not([type]).valid, input:not([type]):focus.valid, input[type=text].valid, input[type=text]:focus.valid, input[type=password].valid, input[type=password]:focus.valid, input[type=email].valid, input[type=email]:focus.valid, input[type=url].valid, input[type=url]:focus.valid, input[type=time].valid, input[type=time]:focus.valid, input[type=date].valid, input[type=date]:focus.valid, input[type=datetime].valid, input[type=datetime]:focus.valid, input[type=datetime-local].valid, input[type=datetime-local]:focus.valid, input[type=tel].valid, input[type=tel]:focus.valid, input[type=number].valid, input[type=number]:focus.valid, input[type=search].valid, input[type=search]:focus.valid, textarea.materialize-textarea.valid, textarea.materialize-textarea:focus.valid {
+  border-bottom: 1px solid #4d81c2;
+  box-shadow: 0 1px 0 0 #4d81c2;
+}
+
+//buttons view colors and appearance fixed in to project styles
+.btn {
+  text-transform: none;
+  padding: 0 1rem;
+  background-color: #4d81c2;
+  box-shadow: none;
+  &:hover {
+    background-color: #4d81c2;
+    box-shadow: none;
+  }
+}
+
+button:focus {
+  outline: 0;
+  background-color: #4d81c2;
+}
+
+//margin in modal footer fixed
+.modal .modal-footer .btn, .modal .modal-footer .btn-flat, .modal .modal-footer .btn-large {
+  float: right;
+  margin: 5px;
+}
+
+//dropdowns styles
+.dropdown-content li > a, .dropdown-content li > span {
+  color: #4d81c2;
+}
+
+.select-wrapper input.select-dropdown {
+  //box-shadow: 0 1px 0 0 #1a1d29;
+  border-bottom: 1px solid #1a1d29;
+}
+
+.pagination li.active, footer.page-footer {
+  background-color: #4d81c2;
+}
+
+i.right {
+  margin-right: 5px;
+}
+
+i.left {
+  margin-left: 5px;
+}
+
+i.small {
+  font-size: 1.5em;
+}
+
+a {
+  color: #4d81c2;
+}
+
+.slimScrollBar {
+  background-color: #4d81c2 !important;
+  opacity: 1 !important;
+}
+
+.tabs {
+  .tab {
+    a {
+      color: #5486c4;
+      font-size: 12px;
+      font-weight: 400;
+      text-transform: none;
+      &:hover{
+        color: #5486c4;
+      }
+      &.active{
+        color: #5486c4;
+        font-weight: 700;
+        border-bottom: 4px solid #5486c4
+      }
+    }
+  }
+  .indicator {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background-color: #5486c4;
+    will-change: left, right;
+  }
+}
+
+.progress{
+  background-color: rgba(84, 134, 196, 0.42);
+  height: 18px;
+  margin: 0;
+  .determinate{
+    background-color: #5486c4;
+  }
+}
+
+[type=checkbox]:checked+label:before {
+  border-right: 2px solid #5486c4;
+  border-bottom: 2px solid #5486c4;
+}
+
+[type=checkbox]+label:before, [type=checkbox]:not(.filled-in)+label:after {
+  border: 1px solid #ccc;
+}
+
+.form-page{
+  .input-field{
+    margin-top: 0;
+  }
+  input:not([type]), input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], textarea.materialize-textarea {
+    height: 0.75rem;
+    margin: 0;
+    line-height: 1rem;
+    padding: 5px 0;
+  }
+  .divider{
+    height: 1px;
+    opacity: 0.3;
+    background-color: #6f97cb;
+    margin: 20px 0;
+  }
+}
+
+[type=radio].with-gap:checked+label:after, [type=radio].with-gap:checked+label:before, [type=radio]:checked+label:after {
+  border: 2px solid #5486c4;
+}
+
+[type=radio].with-gap:checked+label:after, [type=radio]:checked+label:after {
+  background-color: #5486c4;
+  z-index: 0;
+}
+
+[type=checkbox].filled-in:checked+label:after {
+  border: 2px solid #5486c4;
+  background-color: #5486c4;
+}
+
+.modal{
+  max-height: 90%;
+
+}
+
+.file-field .btn, .file-field .btn-large {
+  height: 2.3rem;
+  line-height: 2.3;
+}
+
+.dropdown-content{
+  overflow: visible;
+}
+
+.btn, .btn-floating, .btn-large, .card, .card-panel, .collapsible, .dropdown-content, .side-nav, .toast, .z-depth-1, nav{
+  box-shadow: none;
+}
+
+.backdrop{
+  background-color: #5486c4;
+  text-transform: uppercase;
+}
+
+#userRelationModal{
+  input[type=text]:focus:not([readonly]){
+    border-bottom: none;
+    box-shadow: none;
+    width: auto !important;
+  }
+  .tags.focused{
+    outline: none;
+    border-bottom: none;
+    box-shadow: none;
+  }
+  tags-input .tags .tag-item {
+    margin: 2px;
+    padding: 0 5px;
+    display: inline-block;
+    float: left;
+    height: 26px;
+    line-height: 25px;
+    border-radius: 3px;
+    background: #5486c4;
+    color: #fff;
+    border: 1px solid #37567d;
+    .remove-button{
+      color: #fff;
+    }
+  }
+}

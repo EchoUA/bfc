@@ -1,0 +1,406 @@
+<div class="container form-page">
+    <!--1 table-->
+    <div class="section" ng-show="questions[1]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-1" ng-model="questions[1].check"/>
+                <label for="indeterminate-checkbox-1">Questionnaire instructions</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[1].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[1].id}}"
+                                    user-role="{{CURRENT_USER.user_role}}"></ng-action-dropdown>
+
+            </div>
+        </div>
+        <div class="question-description">
+            The below questionnaire should be filled according to the here below instructions in term of currency, units and entity
+        </div>
+        <div class="table-holder">
+            <div id="question_1" class="hot handsontable htColumnHeaders"></div>
+        </div>
+
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect waves-light btn btn-submit" ng-click="save(1)">Save</a>
+            <!--<a href="" class="waves-effect waves-light btn btn-cancel">Cancel</a>-->
+        </div>
+
+        <div class="divider clearfix"></div>
+    </div>
+    <!--1st table end-->
+
+
+    <!--2nd table-->
+    <div class="section" ng-show="questions[2]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-2" ng-model="questions[2].check"/>
+                <label for="indeterminate-checkbox-2">2. ADB NPL request</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[2].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[2].id}}"
+                                    user-role="{{CURRENT_USER.user_role}}"></ng-action-dropdown>
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="question-description">
+                Please note that client follows its own methodology for calculation of Non-performing loans. The client
+                definition of a non-performing loan is as follows:
+            </div>
+        </div>
+        <div class="table-holder">
+            <div class="checkbox-holder col s12">
+
+                <div class="input-field col s12 clearfix">
+                    Gross Non performing loan is the sum of any exposures where
+                </div>
+
+                <div class="input-field col s12">
+                    <input type="checkbox" class="filled-in" id="checkbox_q2_a" ng-model="questions[2].data.check_1"/>
+                    <label for="checkbox_q2_a">
+                        (a) principal or interest is 90 days or more past due
+                    </label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="checkbox" class="filled-in" id="checkbox_q2_b" ng-model="questions[2].data.check_2"/>
+                    <label for="checkbox_q2_b">
+                        (b) the bank has placed the exposure in non-accural status
+                    </label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="checkbox" class="filled-in" id="checkbox_q2_c" ng-model="questions[2].data.check_3"/>
+                    <label for="checkbox_q2_c">
+                        (c) full repayment is doubtful even if current or less than 90 days past due, and
+                    </label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="checkbox" class="filled-in" id="checkbox_q2_d" ng-model="questions[2].data.check_4"/>
+                    <label for="checkbox_q2_d">
+                        (d) restructured within the last 12 months
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect waves-light btn btn-submit" ng-click="save(2)">Save</a>
+            <!--<a href="" class="waves-effect waves-light btn btn-cancel">Cancel</a>-->
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--2nd table end-->
+
+    <!--3rd table-->
+    <div class="section" ng-show="questions[3]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-3" ng-model="questions[3].check"/>
+                <label for="indeterminate-checkbox-3">3. NPL calculation</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[3].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[3].id}}"
+                                    user-role="{{CURRENT_USER.user_role}}"></ng-action-dropdown>
+            </div>
+        </div>
+        <div class="table-holder">
+            <div id="question_3" class="hot handsontable htColumnHeaders"></div>
+        </div>
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect waves-light btn btn-submit" ng-click="save(3)">Save</a>
+            <!--<a href="" class="waves-effect waves-light btn btn-cancel">Cancel</a>-->
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--3rd table end-->
+
+
+    <!--4th table-->
+    <div class="section" ng-show="questions[4]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-4" ng-model="questions[4].check"/>
+                <label for="indeterminate-checkbox-4">4. Data needed for calculation</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[4].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[4].id}}"
+                                    user-role="{{CURRENT_USER.user_role}}"></ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="table-holder">
+            <div id="question_4" class="hot handsontable htColumnHeaders"></div>
+        </div>
+        <div class="divider"></div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect waves-light btn btn-submit">Save</a>
+            <!--<a href="" class="waves-effect waves-light btn btn-cancel">Cancel</a>-->
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--4th table end-->
+
+
+    <!--5th table-->
+    <div class="section" ng-show="questions[5]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-5" ng-model="questions[5].check"/>
+                <label for="indeterminate-checkbox-5">5. Other Key Financials</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[5].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[5].id}}"
+                                    user-role="{{CURRENT_USER.user_role}}"></ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description" style="margin-bottom: 25px">
+                Please complete/validate the highlighted cells in yellow below. <br>
+                If not relevant, please mark not applicable (n/a) or nil
+            </div>
+        </div>
+
+
+        <div class="col s12">
+            <div class="question-description" style="margin-bottom: 15px">
+                <b>1. Total exposure to the top 20 individual or group obligors:</b> <br>
+                -Please include groups of inter-related companies as one entry <br>
+                -The criterion for selecting and ranking the top 20 should be the total funded + unfunded exposure on an
+                individual or group basis, whichever is larger
+                <br>
+                - Including unfunded instruments such as LCs, guarantees and committed undrawn lines of credit
+            </div>
+        </div>
+
+        <div class="table-holder">
+            <div id="question_5_1" class="hot handsontable htColumnHeaders"></div>
+        </div>
+        <div class="divider"></div>
+
+        <div class="col s12">
+            <div class="question-description" style="margin-bottom: 15px">
+                <b>2. Regulatory NPL ratio per the central bank definition:</b> <br>
+                - Please include NPLs based on the central bank definition according to local reporting standards.<br>
+                - The NPL ratio is calculated as Non-performing Loans divided by Gross Loan Portfolio
+                <br>
+            </div>
+        </div>
+
+        <div class="table-holder">
+            <div id="question_5_2" class="hot handsontable htColumnHeaders"></div>
+        </div>
+        <div class="divider"></div>
+
+
+        <div class="col s12">
+            <div class="question-description" style="margin-bottom: 15px">
+                <b>3. Capital Adequacy:</b> <br>
+            </div>
+        </div>
+
+        <div class="table-holder">
+            <div id="question_5_3" class="hot handsontable htColumnHeaders"></div>
+        </div>
+        <div class="divider"></div>
+
+
+        <div class="col s12">
+            <div class="question-description" style="margin-bottom: 15px">
+                <b>4. Foreign currency mismatch:</b> <br>
+            </div>
+        </div>
+
+        <div class="table-holder">
+            <div id="question_5_4" class="hot handsontable htColumnHeaders"></div>
+        </div>
+        <div class="divider"></div>
+
+        <div class="col s12">
+            <div class="question-description" style="margin-bottom: 15px">
+                <span style="color: red;">Notes:</span> Do not net out long and short positions unless a close-out
+                netting agreement with the corresponding counterparty is effective.
+                <br>
+                Do not include LCs, guarantees and undrawn amounts from committed credit lines in FX.
+            </div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect waves-light btn btn-submit" ng-click="save(5)">Save</a>
+            <!--<a href="" class="waves-effect waves-light btn btn-cancel">Cancel</a>-->
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+
+
+    <!--5th table end-->
+
+    <div class="section">
+        <div class="col s12">
+            <label>Thank you very much for taking the time to answer these questions!</label>
+            <div class="col s12 buttons-holder clearfix">
+                <a href="" class="waves-effect  waves-light btn btn-submit">Save all</a>
+                <!--<a href="" class="waves-effect  waves-light btn btn-cancel">Cancel all</a>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modals-->
+<!--<div ng-include="'/app/src/views/forms/forms_modals.html'"></div>-->
+
+<div id="userRelationModal" class="modal">
+    <div class="modal-content">
+        <div class="row">
+            <p>To assign question to anybody, just input users name in the field below.</p>
+            <tags-input ng-model="users"></tags-input>
+        </div>
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect waves-light btn btn-submit" ng-click="storeAssign()">Save</a>
+            <a href="" class="modal-actions modal-close waves-effect waves-light btn btn-cancel">Cancel</a>
+        </div>
+    </div>
+</div>
+
+<div id="userUnassignModal" class="modal">
+    <div class="modal-content">
+        <div class="row">
+            <div ng-repeat="user in selected_question.users">{{user.email}} <i class="material-icons"
+                                                                               ng-click="unassignUser(user.id)">delete</i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="commentsModal" class="modal">
+
+    <div id="global_add_comments_form" ng-show="visibleReplyForm">
+        <div class="col s12">
+            <div class="input-field col s12">
+                <form ng-submit="storeComment(temp_comment_id, temp_comment_index)">
+                    <div class="input-field col s12">
+                        <input type="text" ng-model="comment_tmp_reply"/>
+                        <label>New reply</label>
+                        <button type="submit" class="waves-effect waves-light btn right" >Send</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-content">
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <h4>Leave comment:</h4>
+
+                    <div class="input-field col s12">
+
+                        <input type="text" id="comment-input" ng-model="new_comment"/>
+                        <label for="comment-input">New comment</label>
+                        <a class="waves-effect waves-light btn right" ng-click="storeComment()">Send</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
+        <div class="row form-holder" ng-show="comments.length > 0">
+            <form class="col s12 recent-comments">
+                <h4>Recent comments:</h4>
+                <div class="row">
+                    <ul class="collection">
+                        <li class="collection-item" ng-repeat="comment in comments">
+                            <div class="row">
+                                <div class="col s12">
+                                    <div class="chip user-mail right">
+                                        {{comment.user.email}}
+                                    </div>
+                                </div>
+                                <div class="col s12">
+                                    <div class="comment-time right">
+                                        {{comment.date*1000 | date:'medium'}}
+                                    </div>
+                                </div>
+                                <div class="col s12">
+                                    <p class="comment">{{comment.comment}}</p>
+                                    <a href="" ng-click="showReplyForm(comment.id, $index)">Reply</a>
+                                </div>
+                                <div class="col s12" id="tmp_add_comments_form{{comment.id}}">
+                                </div>
+                            </div>
+                            <div class="replies-bg">
+                                <div class="reply-comment">
+                                    <div class="row" ng-repeat="reply in comment.replies">
+                                        <div class="input-field col s12">
+                                            <div class="row">
+                                                <div class="col s12">
+
+                                                    <div class="chip user-mail right">
+                                                        {{reply.user.email}}
+                                                    </div>
+                                                </div>
+
+                                                <div class="col s12">
+                                                    <div class="comment-time  right">
+                                                        {{reply.date*1000 | date:'medium'}}
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="col s12">
+                                                    <p class="comment">{{reply.comment}}</p>
+                                                </div>
+                                                <div class="col s12">
+                                                    <a href="" ng-click="showReplyForm(comment.id, $index)">Reply</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <!--<a href="" class="waves-effect waves-light btn btn-submit" ng-click="test()">Save</a>-->
+            <a href="" class="modal-action modal-close waves-effect waves-light btn btn-cancel right">Close</a>
+        </div>
+    </div>
+</div>
+
+
+

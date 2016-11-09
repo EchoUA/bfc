@@ -1,0 +1,51 @@
+<div class="container users">
+    <div class="col s12">
+        <div class="section">
+            <a class="waves-effect waves-light btn create-user hide-on-small-only" ui-sref="users/create">Create</a>
+            <table>
+                <thead>
+                <tr>
+                    <th data-field="id">Name</th>
+                    <th data-field="name">Role</th>
+                    <th data-field="name">Email</th>
+                    <th data-field="name">Company</th>
+                    <th data-field="price">
+                        Creation date
+                    </th>
+                    <th data-field="price">
+                        Creation user
+                    </th>
+                    <th data-field="price">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in items.data">
+                    <td ng-bind="item.name" class="item-name"> </td>
+                    <td ng-bind="item.role_user[0].name" class="item-name"> </td>
+                    <td ng-bind="item.email" class="item-email"></td>
+                    <td ng-bind="item.company[0].name" class="item-email"></td>
+                    <td class="item-name" ng-bind="item.creation_date*1000 | date: 'medium'"></td>
+                    <td class="item-name" ng-bind="item.creation_user.email"></td>
+                    <td>
+                        <a class="waves-effect waves-light btn btn-submit" ui-sref="users/edit({id:item.id})">Edit</a>
+                        <a href='#deleteModal' class="waves-effect waves-light btn btn-cancel" modal ng-click="selected_items.id = item.id">Delete</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <items-pagination></items-pagination>
+        </div>
+    </div>
+    <a class="btn-floating btn-large waves-effect waves-light add-button show-on-small hide-on-med-and-up"  ui-sref="companies/create"><i class="material-icons">add</i></a>
+</div>
+
+<!-- Modal Structure -->
+<div id="deleteModal" class="modal">
+    <div class="modal-content">
+        <h4>Delete this user?</h4>
+    </div>
+    <div class="modal-footer">
+        <a href="" class="waves-effect modal-close waves-light btn btn-submit" ng-click="delete()">Agree</a>
+        <a href="" class="waves-effect modal-close waves-light btn btn-cancel">Cancel</a>
+    </div>
+</div>

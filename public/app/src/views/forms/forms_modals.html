@@ -1,0 +1,111 @@
+<div id="userRelationModal" class="modal">
+    <div class="modal-content">
+        <div class="row">
+            <p>To assign question to anybody, just input users name in the field below.</p>
+            <tags-input ng-model="users"></tags-input>
+        </div>
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect waves-light btn btn-submit" ng-click="storeAssign()">Save</a>
+            <a href="" class="waves-effect waves-light btn btn-cancel">Cancel</a>
+        </div>
+    </div>
+</div>
+
+<div id="userUnassignModal" class="modal">
+    <div class="modal-content">
+        <div class="row">
+            <div ng-repeat="user in selected_question.users">{{user.email}} <i class="material-icons" ng-click="unassignUser(user.id)">delete</i></div>
+        </div>
+    </div>
+</div>
+
+<div id="commentsModal" class="modal">
+    <div class="modal-content">
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <h4>Leave comment:</h4>
+
+                    <div class="input-field col s12">
+
+                        <input type="text" id="comment-input" ng-model="new_comment"/>
+                        <label for="comment-input">New comment</label>
+                        <a class="waves-effect waves-light btn right" ng-click="storeComment()">Send</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row form-holder" ng-show="comments.length > 0">
+            <form class="col s12 recent-comments">
+                <h4>Recent comments:</h4>
+                <div class="row">
+                    <ul class="collection">
+                        <li class="collection-item" ng-repeat="comment in comments">
+                            <div class="row">
+                                <div class="col s12">
+                                    <div class="chip user-mail right">
+                                        {{comment.user.email}}
+                                    </div>
+                                </div>
+                                <div class="col s12">
+                                    <div class="comment-time right">
+                                        {{comment.created_at}}
+                                    </div>
+                                </div>
+                                <div class="col s12">
+                                    <p class="comment">{{comment.comment}}</p>
+                                </div>
+                            </div>
+                            <div class="replies-bg">
+                                <p><b>Replies:</b></p>
+                                <div class="reply-new">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input type="text" id="comment-input_id" ng-model="comment.tmp_reply"/>
+                                            <label for="comment-input_id">New reply</label>
+                                            <a class="waves-effect waves-light btn right"
+                                               ng-click="storeComment(comment.id, $index)">Send</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reply-comment">
+                                    <div class="row" ng-repeat="reply in comment.replies">
+                                        <div class="input-field col s12">
+                                            <div class="row">
+                                                <div class="col s12">
+
+                                                    <div class="chip user-mail right">
+                                                        {{reply.user.email}}
+                                                    </div>
+                                                </div>
+
+                                                <div class="col s12">
+                                                    <div class="comment-time  right">
+                                                        {{reply.created_at}}
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="col s12">
+                                                    <p class="comment">{{reply.comment}}</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <!--<a href="" class="waves-effect waves-light btn btn-submit" ng-click="test()">Save</a>-->
+            <a href="" class="modal-action modal-close waves-effect waves-light btn btn-cancel right">Close</a>
+        </div>
+    </div>
+</div>
+
+
+

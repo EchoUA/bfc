@@ -1,0 +1,26 @@
+table {
+  thead {
+    background-color: #eef3f9;
+    color: #303949;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-bottom: 0;
+    font-size: 14px;
+    th{
+      text-align: center;
+    }
+  }
+  th, td {
+    padding: 15px 20px;
+    //text-align: center;
+  }
+  tbody {
+    tr {
+      border-bottom: 1px solid #dde7f3;
+    }
+  }
+  .btn-submit{
+    margin-bottom: 2px;
+    width: 100%;
+  }
+}

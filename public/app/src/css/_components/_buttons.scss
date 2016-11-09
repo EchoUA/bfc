@@ -1,0 +1,44 @@
+.btn.btn-submit{
+  background-color: #5486c4;
+  border-radius: 4px;
+  text-align: center;
+  &:hover{
+    background-color: #4e79b2;
+  }
+}
+
+.btn.btn-cancel{
+  border: 1px solid #4d81c2;
+  border-radius: 4px;
+  color: #4d81c2;
+  background: transparent;
+  &:hover{
+    background: transparent;
+  }
+}
+
+.add-button{
+  background-color: #5486c4;
+  text-align: center;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  &:hover{
+    background-color: #4e79b2;
+  }
+  @media screen and (max-width: 340px) {
+    right: 10px;
+    bottom: 10px;
+  }
+}
+
+
+.btn.btn-actions{
+  border: 1px solid #4d81c2;
+  border-radius: 4px;
+  color: #4d81c2;
+  background: transparent;
+  &:hover{
+    background: transparent;
+  }
+}

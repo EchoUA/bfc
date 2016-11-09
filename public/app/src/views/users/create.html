@@ -1,0 +1,40 @@
+<div class="container">
+    <form ng-submit="create()" class="col s12">
+        <h5>Create</h5>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="first_name" type="text" class="validate" ng-model="data.name">
+                <label for="first_name">Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input value="I am not editable" id="email" type="text" class="validate" ng-model="data.email">
+                <label for="email">Email</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="password" type="password" class="validate" ng-model="data.password">
+                <label for="password">Password</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="password_confirmation" type="password" class="validate" ng-model="data.password_confirmation">
+                <label for="password_confirmation">Retype password</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <select class="" ng-model="data.role" material-select watch style="color: #9e9e9e;">
+                    <option value="" disabled selected hidden style="color: #9e9e9e;">Choose user role</option>
+                    <option ng-repeat="role in roles" value="{{role.id}}">{{role.name}}</option>
+                </select>
+
+            </div>
+        </div>
+        <button type="submit" class="waves-effect waves-light btn">Create</button>
+        <a ui-sref="users" class="waves-effect waves-light btn">Back</a>
+    </form>
+</div>

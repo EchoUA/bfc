@@ -1,0 +1,45 @@
+<nav class="navigation-bar" role="navigation">
+
+    <!--mobile menu starts-->
+    <ul id="slide-out" class="side-nav">
+        <li ng-class="{ active: $state.includes('users') }" ui-sref="users"><a > Users</a></li>
+        <li  ng-class="{ active: $state.includes('companies') }"><a ui-sref="companies"> Companies</a></li>
+        <li><a href="/logout"
+               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+    </ul>
+    <!--mobile menu ends-->
+
+    <div class="nav-wrapper container">
+        <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+        <a id="logo-container" href="#" class="brand-logo">
+            <img src="/images/bfc-logo-small.png" alt="">
+        </a>
+        <ul ng-if="checkPermission('admin')" class="left hide-on-med-and-down navigation">
+            <li ng-class="{ active: $state.includes('users') }"><a ui-sref="users" class="">Users</a></li>
+            <li ng-class="{ active: $state.includes('companies') }"><a ui-sref="companies">Companies</a></li>
+        </ul>
+        <ul class="right hide-on-med-and-down navigation">
+            <li>
+                <a href="/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                   class="logout">
+                    Logout
+                    <i class="large material-icons right settings">lock_outline</i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<script>
+    $('.button-collapse').sideNav({
+                menuWidth: 300, // Default is 240
+                edge: 'left', // Choose the horizontal origin
+                closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+            }
+    );
+</script>
+
+<form id="logout-form" action="/logout" method="POST" style="display: none;">
+    <input type="hidden" name="_token" id="csrf-token" ng-value="$settings.csrf_token"/>
+</form>

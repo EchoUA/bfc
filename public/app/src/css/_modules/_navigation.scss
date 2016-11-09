@@ -1,0 +1,80 @@
+//main navigation
+nav {
+  box-shadow: none;
+  height: 100%;
+  background-color: white;
+  .button-collapse {
+    color: #5486c4;
+    i {
+      line-height: 85px;
+    }
+  }
+  .brand-logo {
+    padding: 15px 0;
+    position: relative;
+    display: block;
+    width: auto;
+    float: left;
+  }
+  .navigation {
+    li {
+      a {
+        display: block;
+        color: #5486c4;
+        line-height: 82px;
+        &:hover {
+          background: white;
+        }
+      }
+      .logout {
+        line-height: 85px;
+        margin-right: -20px;
+        i.material-icons {
+          line-height: 85px;
+          margin: 0 0 0 5px;
+        }
+        &:hover {
+          background: transparent;
+          .settings {
+            //animation: slideInDown 1s;
+          }
+
+        }
+      }
+      &.active {
+        a {
+          background: white;
+          border-bottom: 3px solid #5486c4;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+//mobile side navigation slide in
+.side-nav {
+  li {
+    a {
+      &:hover {
+        background: #4d81c2;
+        color: #fff;
+      }
+    }
+    &.active {
+      background: #4d81c2;
+      a {
+        color: #fff;
+      }
+    }
+  }
+}
+
+//logo settings
+.brand-logo{
+  margin-right: 15px;
+}
+
+.reset-link{
+  font-weight: 500;
+}

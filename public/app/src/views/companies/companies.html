@@ -1,0 +1,122 @@
+<div class="container companies">
+    <div class="col s12">
+        <div class="section">
+            <!--<h5>Companies</h5>-->
+            <a class="waves-effect waves-light btn btn-submit create-company hide-on-small-only"
+               ui-sref="companies/create">Create</a>
+            <table>
+                <thead>
+                <tr>
+                    <th data-field="id">Name</th>
+                    <!--<th data-field="name">Email</th>-->
+                    <!--<th data-field="name">Linked users</th>-->
+                    <th data-field="price">
+                        Bank Code
+                    </th>
+                    <th data-field="price">
+                        Bank Contact name
+                    </th>
+                    <th data-field="price">
+                        Bank contact email
+                    </th>
+                    <th data-field="price">
+                        Creation date
+                    </th>
+                    <th data-field="price">
+                        Creation user
+                    </th>
+                    <th data-field="price">
+                        Actions
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in items.data">
+                    <td class="item-name"><a ui-sref="forms({company_id:item.id})" ng-bind="item.name"></a></td>
+                    <td class="item-name" ng-bind="item.code"></td>
+                    <td class="item-name" ng-bind="item.bcp.name"></td>
+                    <td class="item-name" ng-bind="item.bcp.email"></td>
+                    <td class="item-name" ng-bind="item.creation_date*1000 | date: 'medium'"></td>
+                    <td class="item-name" ng-bind="item.creation_user.email"></td>
+                    <td>
+                        <div class="center">
+                            <a ui-sref="companies/edit({id:item.id})" class="waves-effect waves-light btn btn-submit">
+                                Edit
+                            </a>
+                            <a href='#deleteModal' modal ng-click="selected_items.id = item.id"
+                               class="waves-effect waves-light btn btn-cancel">Delete
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <items-pagination></items-pagination>
+        </div>
+    </div>
+    <a class="btn-floating btn-large waves-effect waves-light add-button show-on-small hide-on-med-and-up"
+       ui-sref="companies/create"><i class="material-icons">add</i></a>
+</div>
+
+<!-- Delete Modal -->
+<div id="deleteModal" class="modal">
+    <div class="modal-content">
+        <h4>Delete this company?</h4>
+    </div>
+    <div class="modal-footer">
+        <a href="" class="waves-effect modal-close waves-light btn btn-cancel">Cancel</a>
+        <a href="" class="waves-effect modal-close waves-light btn btn-submit" ng-click="delete()">Agree</a>
+    </div>
+</div>
+
+<!-- User relation Modal -->
+<div id="userRelationModal" class="modal">
+    <div class="modal-content">
+        <div class="col s12">
+            <h4>Users</h4>
+        </div>
+        <div class="row">
+            <div class="bar col s12 m6">
+                <input ng-model="user_search.name" placeholder="Search" class="form-control select-search-bar">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col m5 s12 first-list">
+                <span class="list-heading">1. Select users</span>
+                <hr>
+                <div class="scroll-body" slimscroll="{}">
+                    <div ng-repeat="user in available_users.data | filter:user_search"
+                         ng-show="!optionAllowed(user.id)">
+                        <span ng-cloak>{{user.name}}</span>
+                        <a href="" ng-click="assignUser(user.id)">
+                            <i class="small material-icons right">skip_next</i>
+                        </a>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="col s0 m2 swap-icon">
+                <i class="medium material-icons center center-block">swap_horiz</i>
+            </div>
+            <div class="col m5 s12 second-list">
+                <span class="list-heading">2. Attached users</span>
+                <hr>
+                <div class="scroll-body" slimscroll="{}">
+                    <div ng-repeat="user in attached_users track by $index">
+                        <span ng-cloak>{{user.name}}</span>
+                        <a href="" ng-click="deassignUser($index)">
+                            <i class="small material-icons left">skip_previous </i>
+                        </a>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <a href="" class=" modal-action modal-close waves-effect btn btn-cancel">Cancel</a>
+        <a href="" ng-click="saveCompaniesUsers()"
+           class=" modal-action modal-close waves-effect btn btn-submit">Save</a>
+    </div>
+</div>

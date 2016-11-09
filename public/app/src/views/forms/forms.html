@@ -1,0 +1,120 @@
+<div class="container forms-list-page">
+    <div class="row valign-wrapper">
+        <div class="col s12 m2">
+            <img src="/storage/companies/avatars/{{company.logo}}" alt="icon" class="circle responsive-img" ng-show="company.logo">
+            <img src="/app/src/images/bank-icon.jpg" alt="icon" class="circle responsive-img" ng-show="!company.logo">
+        </div>
+        <div class="col s12 m10">
+            <div class="black-text bank-name">
+                <h2>{{company.name}}</h2>
+                <br>
+                <p ng-if="checkPermission('admin')">
+                    Welcome to the questionnaire page. <br>
+                    You can edit and remove questions before sharing questionnaires with Bank Contact: <br>
+                    1. To edit a question, simply edit values in answer tables and click Save once you are done. <br>
+                    2. To remove a question from questionnaire. Simply unselect the question(s) you want to remove
+                    through the ticks button located by the question title. Once you are done un-ticking click on any of
+                    the “Assign” buttons available by each question <br>
+                    Once you are done editing questionnaires click on the here top right button: “Send Questionnaire”. A
+                    summary window will open with the list of questions to be sent to different employees. Check that it
+                    matches your expectation and click “Send to BcP
+
+                </p>
+                <p ng-if="checkPermission('bcp')">Text that will be shown for bcp</p>
+                <p ng-if="checkPermission('user')">Text that will be shown for user</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 head-buttons-holder">
+            <a href="#dispatchPreview" class="send-button waves-effect waves-light btn btn-actions right" modal
+               ng-if="checkPermission('admin')" ng-click="dispatchToUsersPreview('bcp')">Send Questionnaire</a>
+            <a href="#dispatchPreview" class="send-button waves-effect waves-light btn btn-actions right" modal
+               ng-if="checkPermission('bcp')" ng-click="dispatchToUsersPreview('user')">Send Questionnaire</a>
+            <a href="" class="approve-button waves-effect waves-light btn btn-actions right"
+               ng-if="checkPermission('admin')" ng-show="progress_bar == 100" ng-click="approveForm()">Approve</a>
+        </div>
+    </div>
+
+    <div class="about-company row">
+        <div class="col m8 s12">
+            <div class="title text-left">
+                Bank Contact Point:
+            </div>
+            <div class="email text-left">
+                {{company.bcp.email}}
+            </div>
+        </div>
+        <div class="col m4 s12">
+            <div class="status text-left">
+                Overall Completion Status:
+            </div>
+            <div class="progress">
+                <div class="determinate" ng-style="{'width' : progress_bar+'%'}"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12">
+            <ul class="tabs" id="tabs-for-fix">
+                <li ng-repeat="form in forms" class="tab col s12 m4">
+                    <div class="indicator-circle"
+                         ng-class="{'blue darken-1': form.progress_bar == 100, 'green': form.approved == 1}" tooltipped
+                         data-position="top" data-delay="50"
+                         data-tooltip="Status: status"></div>
+                    <a ui-sref-active="active"
+                       ui-sref="forms.view_{{form.position}}({ company_id :  company_id, form_id :  form.id  })">{{form.name}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="col s12">
+        <div class="table-question-header">
+            <div class="row">
+
+                <div class="col s12 l6">
+                    <b># Questions</b>
+                </div>
+                <div class="col s12 l6">
+                    <div class="left">
+                        <b>Responsible</b>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div ui-view class="fade-in-up"></div>
+
+<div id="dispatchPreview" class="modal">
+    <div class="modal-content">
+        <div class="col s12">
+            <h4>Dispatch preview</h4>
+        </div>
+
+        <ul class="collapsible" data-collapsible="accordion">
+            <li ng-repeat="form in dispatch_users">
+                <div class="collapsible-header">{{form.form.name}}</div>
+                <div class="collapsible-body">
+                    <p ng-repeat="question in form.questions_users">
+                        Question №{{question.question.position}} - <span class="chip"
+                                                                         ng-repeat="user in question.users"> {{user.email}} </span>
+                    </p>
+                </div>
+            </li>
+        </ul>
+
+        <div class="modal-footer">
+            <a href="" class="modal-action modal-close waves-effect btn btn-cancel">Cancel</a>
+            <a href="" class="modal-action modal-close waves-effect btn btn-save" ng-if="checkPermission('admin')"
+               ng-click="dispatchToUsers('bcp')">Send to BCp</a>
+            <a href="" class="modal-action modal-close waves-effect btn btn-save" ng-if="checkPermission('bcp')"
+               ng-click="dispatchToUsers('user')">Send to users</a>
+        </div>
+    </div>
+</div>

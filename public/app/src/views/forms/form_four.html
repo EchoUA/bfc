@@ -1,0 +1,176 @@
+
+<div class="container form-page">
+    <!--1 table-->
+    <div class="section" ng-show="questions[1]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-1" ng-model="questions[1].check"/>
+                <label for="indeterminate-checkbox-1">1. Prudential requirements for XYZ Bank (bank-only) as of [Month and day], [Year]</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[1].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[1].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+        <div class="table-holder">
+            <div id="question_1" class="hot handsontable htColumnHeaders"></div>
+        </div>
+        <div class="col s12">
+            <div class="question-description">
+                <br>
+                <span style="color: red;">*</span>  The bank should provide the information for the largest applicable exposure
+                <br>
+                <br>
+                If the bank has evidence that one or more of these requirements have been abolished or superseded,
+                or if a declaration of non-objection (so-called waiver) has been obtainedfrom the supervisor,
+                it should mention it and produce the official document for confirmation (if necessary with an English translation).
+                <br>
+                <br>
+                1 Please fill in with one decimal exactitude. <br>
+                2 Please explain and indicate when the bank will be back in compliance with the regulatory requirement
+            </div>
+        </div>
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect waves-light btn btn-submit" ng-click="save(1)">Save</a>
+            <!--<a href="" class="waves-effect waves-light btn btn-cancel">Cancel</a>-->
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--1st table end-->
+</div>
+
+<!--Modals-->
+<!--<div ng-include="'/app/src/views/forms/forms_modals.html'"></div>-->
+
+<div id="userRelationModal" class="modal">
+    <div class="modal-content">
+        <div class="row">
+            <p>To assign question to anybody, just input users name in the field below.</p>
+            <tags-input ng-model="users"></tags-input>
+        </div>
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect waves-light btn btn-submit" ng-click="storeAssign()">Save</a>
+            <a href="" class="modal-actions modal-close waves-effect waves-light btn btn-cancel">Cancel</a>
+        </div>
+    </div>
+</div>
+
+<div id="userUnassignModal" class="modal">
+    <div class="modal-content">
+        <div class="row">
+            <div ng-repeat="user in selected_question.users">{{user.email}} <i class="material-icons" ng-click="unassignUser(user.id)">delete</i></div>
+        </div>
+    </div>
+</div>
+
+<div id="commentsModal" class="modal">
+
+    <div id="global_add_comments_form" ng-show="visibleReplyForm">
+        <div class="col s12">
+            <div class="input-field col s12">
+                <form ng-submit="storeComment(temp_comment_id, temp_comment_index)">
+                    <div class="input-field col s12">
+                        <input type="text" ng-model="comment_tmp_reply"/>
+                        <label>New reply</label>
+                        <button type="submit" class="waves-effect waves-light btn right" >Send</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-content">
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <h4>Leave comment:</h4>
+
+                    <div class="input-field col s12">
+
+                        <input type="text" id="comment-input" ng-model="new_comment"/>
+                        <label for="comment-input">New comment</label>
+                        <a class="waves-effect waves-light btn right" ng-click="storeComment()">Send</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
+        <div class="row form-holder" ng-show="comments.length > 0">
+            <form class="col s12 recent-comments">
+                <h4>Recent comments:</h4>
+                <div class="row">
+                    <ul class="collection">
+                        <li class="collection-item" ng-repeat="comment in comments">
+                            <div class="row">
+                                <div class="col s12">
+                                    <div class="chip user-mail right">
+                                        {{comment.user.email}}
+                                    </div>
+                                </div>
+                                <div class="col s12">
+                                    <div class="comment-time right">
+                                        {{comment.date*1000 | date:'medium'}}
+                                    </div>
+                                </div>
+                                <div class="col s12">
+                                    <p class="comment">{{comment.comment}}</p>
+                                    <a href="" ng-click="showReplyForm(comment.id, $index)">Reply</a>
+                                </div>
+                                <div class="col s12" id="tmp_add_comments_form{{comment.id}}">
+                                </div>
+                            </div>
+                            <div class="replies-bg">
+                                <div class="reply-comment">
+                                    <div class="row" ng-repeat="reply in comment.replies">
+                                        <div class="input-field col s12">
+                                            <div class="row">
+                                                <div class="col s12">
+
+                                                    <div class="chip user-mail right">
+                                                        {{reply.user.email}}
+                                                    </div>
+                                                </div>
+
+                                                <div class="col s12">
+                                                    <div class="comment-time  right">
+                                                        {{reply.date*1000 | date:'medium'}}
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="col s12">
+                                                    <p class="comment">{{reply.comment}}</p>
+                                                </div>
+                                                <div class="col s12">
+                                                    <a href="" ng-click="showReplyForm(comment.id, $index)">Reply</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <!--<a href="" class="waves-effect waves-light btn btn-submit" ng-click="test()">Save</a>-->
+            <a href="" class="modal-action modal-close waves-effect waves-light btn btn-cancel right">Close</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

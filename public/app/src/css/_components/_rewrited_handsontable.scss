@@ -1,0 +1,37 @@
+.handsontable td{
+  font-size: 12px;
+  height: 23px;
+  line-height: 23px;
+}
+
+
+//dropdown arrow in tables style
+.handsontable .htAutocompleteArrow{
+  color: rgba(84, 134, 196, 0.61);
+}
+
+//dropdown arrow in tables hover state style
+.handsontable td .htAutocompleteArrow:hover{
+  color: #5486c4;
+}
+
+.wtHider{
+  width: 100% !important;
+  height: auto !important;
+  .wtSpreader{
+    width: 100% !important;
+    table{
+      width: 100%;
+      border: 1px solid #dde7f3;
+      tbody{
+        width: 100%;
+      }
+    }
+  }
+}
+
+.wtHolder{
+  overflow:  auto !important;
+}
+
+

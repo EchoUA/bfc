@@ -1,0 +1,43 @@
+<div class="container">
+    <form ng-submit="create()" class="col s12">
+        <h5>Create</h5>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="name" type="text" class="validate" ng-model="data.name">
+                <label for="name">Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="code" type="text" class="validate" ng-model="data.code">
+                <label for="code">Bank code</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="file-field input-field col s12">
+                <p>Upload company logo</p>
+                    <div class="btn" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
+                         ngf-accept="'image/*'" ngf-max-size="20MB">File</div>
+                    <div class="file-path-wrapper">
+                        <img ngf-thumbnail="file" style="width: 200px">
+                    </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="bcp_name" type="text" class="validate" ng-model="data.bcp_name">
+                <label for="bcp_name">BCp name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="bcp_email" type="email" class="validate" ng-model="data.bcp_email">
+                <label for="bcp_email">BCp email</label>
+            </div>
+        </div>
+        <button type="submit" class="waves-effect waves-light btn">Create</button>
+        <a ui-sref="companies" class="waves-effect waves-light btn">Back</a>
+
+
+    </form>
+</div>

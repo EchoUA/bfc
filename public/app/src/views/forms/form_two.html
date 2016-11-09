@@ -1,0 +1,2595 @@
+<div class="container form-page">
+
+    <!--0 question start-->
+    <div class="section" ng-show="questions[0]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-0" ng-model="questions[0].check"/>
+                <label for="indeterminate-checkbox-0">1. For The Trade Finance Program</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[0].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[0].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description">
+                Please, fill out/validate every item highlighted in yellow in the following tables:
+            </div>
+        </div>
+
+        <div class="table-holder">
+            <div id="question_0" class="hot handsontable htColumnHeaders"></div>
+        </div>
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect waves-light btn btn-submit" ng-click="save(0)">Save</a>
+            <!--<a href="" class="waves-effect waves-light btn btn-cancel">Cancel</a>-->
+            <a href="#modal1" class="waves-effect waves-light btn btn-cancel right modal-trigger" modal>Instructions</a>
+        </div>
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4>INSTRUCTIONS</h4>
+                <p>
+                    ― PROVIDE THE INFORMATION REQUESTED ONLY IF NOT AVAILABLE IN ENGLISH ON YOUR
+                    WEBSITE OR IN THE ANNUAL REPORTS<br>
+                    ― Please verify and validate completed cells and answer all empty cells<br>
+                    ― All figures in local currency unless otherwise stated (please state if you are using<br>
+                    thousands or millions in the table above and use always full amounts, always thousands
+                    or always millions)<br>
+                    ― If you are reporting quarterly interim results, please indicate which quarter is being
+                    reported (e.g. 2Q 2012)<br>
+                    ― If any item does not apply to your bank, please state “n/a” rather than leaving it blank<br>
+                    ― If the respective value is zero, then please include "Nil" or "0"<br>
+                    ― Please spell out all acronyms<br>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a href="" class="modal-action modal-close btn btn-cancel waves-effect right">Close</a>
+            </div>
+        </div>
+
+        <div class="divider clearfix"></div>
+    </div>
+    <!--0 question end-->
+
+    <!--1,2,3,4 questions starts-->
+    <div class="section">
+        <div class="row question-header">
+            <div class="col s12">
+                <h2>PRELIMINARY DOCUMENTATION</h2>
+                <div class="question-description">
+                    Please provide the following documents in English in electronic format: <br>
+                    <small>(If not available in electronic format, please contact Evelina Dubceac
+                        (dubceac@bfconsulting.com) at
+                        your earliest convenience to receive the address where you can send them by courier.)
+                    </small>
+                </div>
+            </div>
+            <!--1st-->
+            <div ng-show="questions[1]">
+
+                <div class="col s12">
+                    <div class="question-description">
+                        <small>If the audited
+                            financial statements were accompanied by a Management Letter issued by the External
+                            Auditors, please provide it as well, along with Management responses thereto and a list of
+                            corrective measures taken by the bank to avoid recurrence of the lapses mentioned therein.
+                        </small>
+                    </div>
+                </div>
+                <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-1"
+                                               ng-model="questions[1].check"/>
+                    <label for="indeterminate-checkbox-1">1. Three last annual reports (including the audit reports with
+                        all
+                        the notes) </label>
+                </div>
+
+
+                <div class="col s12 l2">
+                    <div class="indicator-holder">
+                        <div class="indicator-circle" ng-class="{'green': questions[1].status == 1}" tooltipped
+                             data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                    </div>
+                </div>
+                <div class="col s12 l4">
+                    <!-- Action dropdown -->
+                    <ng-action-dropdown ng-if="questions" question-id="{{questions[1].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+                </div>
+                <div class="col s12">
+                    <div class="col s12 m6">
+                        <form action="#">
+                            <div class="file-field input-field">
+                                <div class="btn">
+                                    <span>File</span>
+                                    <input type="file">
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col s12 m6">
+                        <div class="input-field">
+                            <input placeholder="Comment" id="comment-q1" type="text" class="validate"
+                                   ng-model="questions[1].data.comment">
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 buttons-holder clearfix">
+                    <a href="" class="waves-effect waves-light btn btn-submit" ng-click="save(1)">Save</a>
+                    <!--<a href="" class="waves-effect waves-light btn btn-cancel">Cancel</a>-->
+                </div>
+            </div>
+
+            <!--2-->
+            <div ng-show="questions[2]">
+                <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-2"
+                                               ng-model="questions[2].check"/>
+                    <label for="indeterminate-checkbox-2">2. Unaudited interim financial statements for the most recent
+                        quarter</label>
+                </div>
+                <div class="col s12 l2">
+                    <div class="indicator-holder">
+                        <div class="indicator-circle" ng-class="{'green': questions[2].status == 1}" tooltipped
+                             data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                    </div>
+                </div>
+                <div class="col s12 l4">
+                    <!-- Action dropdown -->
+                    <ng-action-dropdown ng-if="questions" question-id="{{questions[2].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+                </div>
+                <div class="col s12">
+                    <div class="col s12 m6">
+                        <form action="#">
+                            <div class="file-field input-field">
+                                <div class="btn">
+                                    <span>File</span>
+                                    <input type="file">
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col s12 m6">
+                        <div class="input-field">
+                            <input placeholder="Comment" id="comment-q2" type="text" class="validate"
+                                   ng-model="questions[2].data.comment">
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 buttons-holder clearfix">
+                    <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(2)">Save</a>
+                    <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+                </div>
+            </div>
+
+            <!--3rd-->
+            <div ng-show="questions[3]">
+                <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-3"
+                                               ng-model="questions[3].check"/>
+                    <label for="indeterminate-checkbox-3">3. Last available credit, market and operational risk
+                        management
+                        reports</label>
+                </div>
+                <div class="col s12 l2">
+                    <div class="indicator-holder">
+                        <div class="indicator-circle" ng-class="{'green': questions[3].status == 1}" tooltipped
+                             data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                    </div>
+                </div>
+                <div class="col s12 l4">
+                    <!-- Action dropdown -->
+                    <ng-action-dropdown ng-if="questions" question-id="{{questions[3].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+                </div>
+                <div class="col s12">
+                    <div class="col s12 m6">
+                        <form action="#">
+                            <div class="file-field input-field">
+                                <div class="btn">
+                                    <span>File</span>
+                                    <input type="file">
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col s12 m6">
+                        <div class="input-field">
+                            <input placeholder="Comment" id="comment-q3" type="text" class="validate"
+                                   ng-model="questions[3].data.comment">
+                            <!--<label for="comment-q3">First Name</label>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 buttons-holder clearfix">
+                    <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(3)">Save</a>
+                    <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+                </div>
+            </div>
+
+            <!--4th-->
+            <div ng-show="questions[4]">
+                <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-4"
+                                               ng-model="questions[4].check"/>
+                    <label for="indeterminate-checkbox-4">4. Updated organizational chart</label>
+                </div>
+                <div class="col s12 l2">
+                    <div class="indicator-holder">
+                        <div class="indicator-circle" ng-class="{'green': questions[4].status == 1}" tooltipped
+                             data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                    </div>
+                </div>
+                <div class="col s12 l4">
+                    <!-- Action dropdown -->
+                    <ng-action-dropdown ng-if="questions" question-id="{{questions[4].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+                </div>
+                <div class="col s12">
+                    <div class="col s12 m6">
+                        <form action="#">
+                            <div class="file-field input-field">
+                                <div class="btn">
+                                    <span>File</span>
+                                    <input type="file">
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col s12 m6">
+                        <div class="input-field">
+                            <input placeholder="Comment" id="first_name" type="text" class="validate"
+                                   ng-model="questions[4].data.comment">
+                        </div>
+                    </div>
+                </div>
+
+                <!--<div class="col s12">-->
+                <!--<div class="question-description">-->
+                <!--Please, fill out every item in the following tables:-->
+                <!--</div>-->
+                <!--</div>-->
+                <div class="col s12 buttons-holder clearfix">
+                    <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(4)">Save</a>
+                    <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+                </div>
+                <div class="divider clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!--1,2,3,4 questions end-->
+
+
+    <!--5 question start-->
+    <div class="section" ng-show="questions[5]">
+        <div class="row question-header">
+            <div class="col s12">
+                <h2>GENERAL INFORMATION</h2>
+            </div>
+            <div class="col s12 l6">
+                <input type="checkbox" id="indeterminate-checkbox-5_1" ng-model="questions[5].check"/>
+                <label for="indeterminate-checkbox-5_1">5. Subsidiaries and associates:</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[5].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[5].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="table-holder">
+                <div id="question_5" class="hot handsontable htColumnHeaders"></div>
+            </div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(5)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--5 question ends-->
+
+
+    <!--6 question start-->
+    <div class="section" ng-show="questions[6]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-5" ng-model="questions[6].check"/>
+
+                <label for="indeterminate-checkbox-5">6. All shareholders with a stake above 5% (most recent data
+                    available)</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[6].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[6].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description">
+                Please also show family stakes or other combined large interests of over 5.0%:
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="table-holder">
+                <div id="question_6" class="hot handsontable htColumnHeaders"></div>
+            </div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(6)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--6 question end-->
+
+
+    <!--7th table start-->
+    <div class="section" ng-show="questions[7]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-6" ng-model="questions[7].check"/>
+                <label for="indeterminate-checkbox-6">7. All members of the Board of Directors</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[7].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[7].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description">
+                Please complete the table below identically to theexample provided below, using the most recent data
+                available. Please list the names of allboard members, but only provide details for those board
+                members who are new.
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="table-holder">
+                <div id="question_7" class="hot handsontable htColumnHeaders"></div>
+            </div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(7)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--7th tale ends-->
+
+
+    <!--8 table start-->
+    <div class="section" ng-show="questions[8]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-7" ng-model="questions[8].check"/>
+
+                <label for="indeterminate-checkbox-7">8. Are any of the Board members related to each other (close
+                    relatives)?</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[8].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[8].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description">
+                Please complete the table below identically to theexample provided below, using the most recent data
+                available. Please list the names of allboard members, but only provide details for those board
+                members who are new.
+            </div>
+        </div>
+
+        <div class="row clearfix">
+            <div class="col s12 l6">
+                <div class="col s6">
+                    <input name="group3" type="radio" id="test9" value="1" ng-model="questions[8].data.check"/>
+                    <label for="test9">Yes</label>
+                </div>
+                <div class="col s6">
+                    <input name="group3" type="radio" id="test10" value="2" ng-model="questions[8].data.check"/>
+                    <label for="test10">No</label>
+                </div>
+            </div>
+            <div class="col s4">
+                <div class="input-field">
+                    <input placeholder="Comment" id="comment-11q" type="text" class="validate"
+                           ng-model="questions[8].data.comment">
+                    <label for="comment-11q"></label>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(8)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--8 table ends-->
+
+    <!--9 table start-->
+    <div class="section" ng-show="questions[9]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-8" ng-model="questions[9].check"/>
+
+                <label for="indeterminate-checkbox-8">9. Appointed committees on the Board of Directors </label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[9].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+            <div class="col s12 l3">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[9].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description">
+                Please do not include management/executive committees. Only include Board of Directors-level
+                committees and provide the names of the members of the respective committee:
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="table-holder">
+                <div id="question_9" class="hot handsontable htColumnHeaders"></div>
+            </div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(9)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--9 tale ends-->
+
+    <!--10 table start-->
+    <div class="section" ng-show="questions[10]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-9"
+                                           ng-model="questions[10].check"/>
+
+                <label for="indeterminate-checkbox-9">10. Profiles of the top three managers of the bank</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[10].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[10].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description">
+                Please complete the table below identically to theexample provided below, using the most recent data
+                available. Please list the names of allboard members, but only provide details for those board
+                members who are new.
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="table-holder">
+                <div id="question_10" class="hot handsontable htColumnHeaders"></div>
+            </div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(10)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--10 table ends-->
+
+    <!--11 table start-->
+    <div class="section" ng-show="questions[11]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-10"
+                                           ng-model="questions[11].check"/>
+                <label for="indeterminate-checkbox-10">11. Number of branches/offices</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[11].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[11].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description">
+                By type, if there is more than one branch type:
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="table-holder">
+                <div id="question_11" class="hot handsontable htColumnHeaders"></div>
+            </div>
+        </div>
+
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(11)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+    </div>
+    <div class="divider clearfix"></div>
+    <!--11 table ends-->
+
+    <!--12 table start-->
+    <div class="section" ng-show="questions[12]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-11"
+                                           ng-model="questions[12].check"/>
+                <label for="indeterminate-checkbox-11">12. Loan approval authority</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[12].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[12].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description">
+                - Please complete the table below identically to the example listing limits at each level and
+                whether related party loans can be approved at each level. Pleaseuse as many tables as necessary to
+                show separately the different credit segments:
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="table-holder">
+                <div id="question_12" class="hot handsontable htColumnHeaders"></div>
+            </div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(12)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--12 table ends-->
+
+    <!--13 table start-->
+    <div class="section" ng-show="questions[13]">
+        <div class="row question-header">
+            <div class="col s12">
+                <h2>FINANCIAL INFORMATION</h2>
+            </div>
+            <div class="col s12 m6">
+                <label>A. BALANCE SHEET - ASSETS</label>
+            </div>
+            <div class="col s12 ">
+                <div class="question-description">
+                    Please note that the value for the Total Gross Loan Portfolio must be the same in all thefollowing
+                    questions and must coincide with the value from the audit reports.
+                </div>
+            </div>
+
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-12"
+                                           ng-model="questions[13].check"/>
+                <label for="indeterminate-checkbox-12">13. Breakdown of Gross Loan Portfolio by customer segment</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[13].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[13].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description">
+                - Please feel free to substitute with the names of the segments used internally:
+            </div>
+        </div>
+
+        <div class="table-holder">
+            <div id="question_13" class="hot handsontable htColumnHeaders"></div>
+        </div>
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(13)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--13 table end-->
+
+
+    <!--14 table start-->
+    <div class="section" ng-show="questions[14]">
+        <div class="row question-header">
+
+
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-13"
+                                           ng-model="questions[14].check"/>
+                <label for="indeterminate-checkbox-13">14. Breakdown of Gross Loan Portfolio by economic sector</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[14].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[14].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description">
+                Please, specify the sectors:
+            </div>
+        </div>
+
+        <div class="table-holder">
+            <div id="question_14" class="hot handsontable htColumnHeaders"></div>
+        </div>
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(14)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--14 table end-->
+
+
+    <!--15 table start-->
+    <div class="section" ng-show="questions[15]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-14"
+                                           ng-model="questions[15].check"/>
+                <label for="indeterminate-checkbox-14">15. Breakdown of Gross Loan Portfolio by currency:</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[15].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[15].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+        <div class="table-holder">
+            <div id="question_15" class="hot handsontable htColumnHeaders"></div>
+        </div>
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(15)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--15 table end-->
+
+
+    <!--16 table start-->
+    <div class="section" ng-show="questions[16]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-15"
+                                           ng-model="questions[16].check"/>
+                <label for="indeterminate-checkbox-15">16. Breakdown of Gross Loan Portfolio by collateral </label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[16].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[16].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description">
+                - Please feel free to substitute these categories with those used internally:
+            </div>
+        </div>
+
+        <div class="table-holder">
+            <div id="question_16" class="hot handsontable htColumnHeaders"></div>
+        </div>
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(16)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--16 table end-->
+
+
+    <!--17 table start-->
+    <div class="section" ng-show="questions[17]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-16"
+                                           ng-model="questions[17].check"/>
+                <label for="indeterminate-checkbox-16">17. Breakdown of Gross Loan Portfolio by remaining
+                    maturity</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[17].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4"></div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description">
+                Please feel free to replace the time buckets with those used internally:
+            </div>
+        </div>
+
+        <div class="table-holder">
+            <div id="question_17" class="hot handsontable htColumnHeaders"></div>
+        </div>
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(17)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--17 table end-->
+
+
+    <!--18 table start-->
+    <div class="section" ng-show="questions[18]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-17"
+                                           ng-model="questions[18].check"/>
+                <label for="indeterminate-checkbox-17">18. Breakdown of Gross Loan Portfolio by fixed vs. floating
+                    interest rates:</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[18].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[18].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+        <div class="table-holder">
+            <div id="question_18" class="hot handsontable htColumnHeaders"></div>
+        </div>
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(18)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--18 table end-->
+
+
+    <!--19 table start-->
+    <div class="section" ng-show="questions[19]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-18"
+                                           ng-model="questions[19].check"/>
+                <label for="indeterminate-checkbox-18">19. Breakdown of exposure to related parties*:</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[19].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[19].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+        <div class="table-holder">
+            <div id="question_19" class="hot handsontable htColumnHeaders"></div>
+        </div>
+        <div class="col s12">
+            <div class="question-description">
+                * Including companies where members of the bank's supervisory board serve as
+                supervisors/managers/owners
+                <br>
+                ** Including unfunded instruments such as LCs, guarantees and committed undrawn lines of credit
+            </div>
+        </div>
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(19)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--19 table end-->
+
+    <!--20 table start-->
+    <div class="section" ng-show="questions[20]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-19"
+                                           ng-model="questions[20].check"/>
+                <label for="indeterminate-checkbox-19">20. Largest single related party* exposure (funded &
+                    unfunded**):</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[20].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[20].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+        <div class="table-holder">
+            <div id="question_20" class="hot handsontable htColumnHeaders"></div>
+        </div>
+        <div class="col s12">
+            <div class="question-description">
+                * Including companies where members of the bank's supervisory board serve as supervisors/managers/owners
+                <br>
+                **Including unfunded instruments such as LCs, guarantees and committed undrawn lines of credit
+            </div>
+        </div>
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(20)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--20 table end-->
+
+
+    <!--21 table start-->
+    <div class="section" ng-show="questions[21]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-20"
+                                           ng-model="questions[21].check"/>
+                <label for="indeterminate-checkbox-20">21. Gross Loans to related parties and employees:</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[21].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[21].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+        <div class="table-holder">
+            <div id="question_21" class="hot handsontable htColumnHeaders"></div>
+        </div>
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(21)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--21 table end-->
+
+    <!--22 table start-->
+    <div class="section" ng-show="questions[22]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-21"
+                                           ng-model="questions[22].check"/>
+                <label for="indeterminate-checkbox-21">22. Total exposure to the top 20 individual or group
+                    obligors</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[22].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[22].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description">
+                Include groups of inter-related companies as one entry:
+            </div>
+        </div>
+
+        <div class="table-holder">
+            <div id="question_22" class="hot handsontable htColumnHeaders"></div>
+        </div>
+        <div class="col s12">
+            <div class="question-description">
+                Include groups of * Including unfunded instruments such as LCs, guarantees and committed undrawn lines
+                of credit
+                inter-related companies as one entry:
+            </div>
+        </div>
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(22)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--22 table end-->
+
+
+    <!--23 table start-->
+    <div class="section" ng-show="questions[23]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-22"
+                                           ng-model="questions[23].check"/>
+                <label for="indeterminate-checkbox-22">23. Top 20 individual or group exposures as of
+                    __/__/20__:</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[23].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[23].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description">
+                - Please include groups of inter-related companies as one entry - The criterion for selecting and
+                ranking the top 20 should be the total funded + unfunded exposure on anindividual or group basis,
+                whichever is larger - Including unfunded instruments such as LCs, guarantees and committed undrawn
+                lines of credit
+            </div>
+        </div>
+
+        <div class="table-holder">
+            <div id="question_23" class="hot handsontable htColumnHeaders"></div>
+        </div>
+        <div class="col s12">
+            <div class="question-description">
+                * Including unfunded instruments such as LCs, guarantees and committed undrawn lines of credit
+            </div>
+        </div>
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(23)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--23 table end-->
+
+    <!--24 table start-->
+    <div class="section" ng-show="questions[24]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-23"
+                                           ng-model="questions[24].check"/>
+                <label for="indeterminate-checkbox-23">24. Breakdown of Gross Loan Portfolio by regulatory
+                    classification</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[24].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[24].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description">
+                - Names of categories may be changed to reflect local standards:
+            </div>
+        </div>
+
+        <div class="table-holder">
+            <div id="question_24" class="hot handsontable htColumnHeaders"></div>
+        </div>
+        <div class="col s12">
+            <div class="question-description">
+                * Please indicate whether each classification is included in the regulatory definition of non-performing
+                loan (NPL)
+            </div>
+        </div>
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(24)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--24 table end-->
+
+    <!--25 table start-->
+    <div class="section" ng-show="questions[25]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-24"
+                                           ng-model="questions[25].check"/>
+                <label for="indeterminate-checkbox-24">25. Economic sectors contributing the most to NPLs as of
+                    __/__/20__:</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[25].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[25].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+        <div class="table-holder">
+            <div id="question_25" class="hot handsontable htColumnHeaders"></div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(25)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--25 table end-->
+
+    <!--26 table start-->
+    <div class="section" ng-show="questions[26]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-25"
+                                           ng-model="questions[26].check"/>
+                <label for="indeterminate-checkbox-25">26. Non-performing assets sold during the year:</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[26].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[26].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+        <div class="table-holder">
+            <div id="question_26" class="hot handsontable htColumnHeaders"></div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(26)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--26 table end-->
+
+
+    <!--27 table start-->
+    <div class="section" ng-show="questions[27]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-26"
+                                           ng-model="questions[27].check"/>
+                <label for="indeterminate-checkbox-26">27. Foreclosed assets on balance sheet:</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[27].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[27].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+        <div class="table-holder">
+            <div id="question_27" class="hot handsontable htColumnHeaders"></div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(27)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--27 table end-->
+
+
+    <!--28 table start-->
+    <div class="section" ng-show="questions[28]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-27"
+                                           ng-model="questions[28].check"/>
+                <label for="indeterminate-checkbox-27">28. Write-offs during the period</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[28].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[28].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+        <div class="table-holder">
+            <div id="question_28" class="hot handsontable htColumnHeaders"></div>
+            <div class="question-header">
+                <small>* Recoveries refer only to loans and advances previously written off</small>
+            </div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect waves-light btn btn-submit" ng-click="save(28)">Save</a>
+            <!--<a href="" class="waves-effect waves-light btn btn-cancel">Cancel</a>-->
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--28 table end-->
+
+
+    <!--29 table start-->
+    <div class="section" ng-show="questions[29]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-28"
+                                           ng-model="questions[29].check"/>
+                <label for="indeterminate-checkbox-28">29. Loan loss reserves:</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[29].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[29].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+        <div class="table-holder">
+            <div id="question_29" class="hot handsontable htColumnHeaders"></div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect waves-light btn btn-submit" ng-click="save(29)">Save</a>
+            <!--<a href="" class="waves-effect waves-light btn btn-cancel">Cancel</a>-->
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--29 table end-->
+
+
+    <!--30 table start-->
+    <div class="section" ng-show="questions[30]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-29"
+                                           ng-model="questions[30].check"/>
+                <label for="indeterminate-checkbox-29">30. Direct exposure to the real estate market:</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[30].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[30].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+        <div class="table-holder">
+            <div id="question_30" class="hot handsontable htColumnHeaders"></div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description">
+                * Except if mostly for exports
+            </div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(30)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--30 table end-->
+
+
+    <!--31 table start-->
+    <div class="section" ng-show="questions[31]">
+        <h2>B. BALANCE SHEET - LIABILITIES</h2>
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-30"
+                                           ng-model="questions[31].check"/>
+                <label for="indeterminate-checkbox-30">31. Top 20 depositors:</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[31].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[31].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+        <div class="table-holder">
+            <div id="question_31" class="hot handsontable htColumnHeaders"></div>
+        </div>
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(31)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--31 table end-->
+
+
+    <!--32 table start-->
+    <div class="section" ng-show="questions[32]">
+        <h2>B. BALANCE SHEET - LIABILITIES</h2>
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-31"
+                                           ng-model="questions[32].check"/>
+                <label for="indeterminate-checkbox-31">32. Breakdown of customer deposits by currency</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[32].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[32].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description">
+                Excluding deposits from central bank, other banks and NBFIs:
+            </div>
+        </div>
+        <div class="table-holder">
+            <div id="question_32" class="hot handsontable htColumnHeaders"></div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(32)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--32 table end-->
+
+
+    <!--33 table start-->
+    <div class="section" ng-show="questions[33]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-32"
+                                           ng-model="questions[33].check"/>
+                <label for="indeterminate-checkbox-32">33. Breakdown of customer deposits by customer type</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[33].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[33].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description">
+                Excluding deposits from central bank, other banks and NBFIs):
+            </div>
+        </div>
+        <div class="table-holder">
+            <div id="question_33" class="hot handsontable htColumnHeaders"></div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(33)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--33 table end-->
+
+    <!--34 table start-->
+    <div class="section" ng-show="questions[34]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-33"
+                                           ng-model="questions[34].check"/>
+                <label for="indeterminate-checkbox-33">34. Breakdown of liabilities by fixed vs. floating interest
+                    rate: </label>
+            </div>
+
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[34].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[34].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description">
+                Excluding deposits from central bank, other banks and NBFIs):
+            </div>
+        </div>
+        <div class="table-holder">
+            <div id="question_34" class="hot handsontable htColumnHeaders"></div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(34)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--34 table end-->
+
+    <!--35 table start-->
+    <div class="section" ng-show="questions[35]">
+        <h2>C. BALANCE SHEET - EQUITY</h2>
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-36"
+                                           ng-model="questions[35].check"/>
+                <label for="indeterminate-checkbox-36">35. Capital Adequacy:</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[35].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[35].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description">
+                Excluding deposits from central bank, other banks and NBFIs):
+            </div>
+        </div>
+        <div class="table-holder">
+            <div id="question_35" class="hot handsontable htColumnHeaders"></div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(35)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--35 table end-->
+
+    <!--36 table start-->
+    <div class="section" ng-show="questions[36]">
+        <h2>D. LIQUIDITY & OTHER</h2>
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-37"
+                                           ng-model="questions[36].check"/>
+                <label for="indeterminate-checkbox-37">36. Undrawn borrowing capacity under advised/committed credit
+                    lines with other banks (forliquidity purposes and unrelated to trade finance/LCs) as of
+                    __/__/20__</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[36].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[36].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description">
+                Excluding deposits from central bank, other banks and NBFIs):
+            </div>
+        </div>
+        <div class="table-holder">
+            <div id="question_36" class="hot handsontable htColumnHeaders"></div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(36)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--36 table end-->
+
+    <!--37 question start-->
+    <div class="section" ng-show="questions[37]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-38"
+                                           ng-model="questions[37].check"/>
+                <label for="indeterminate-checkbox-38">37. Maturity Mismatch Analysis as of __/__/20__</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[37].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[37].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description">
+                - Please feel free to replace the time buckets with the ones used internally:
+            </div>
+        </div>
+        <div class="table-holder">
+            <div id="question_37" class="hot handsontable htColumnHeaders"></div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(37)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--37 question end-->
+
+    <!--38 question start-->
+    <div class="section" ng-show="questions[38]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-39"
+                                           ng-model="questions[38].check"/>
+                <label for="indeterminate-checkbox-39">38. Interest Repricing Gap Analysis as of</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[38].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[38].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description">
+                Please feel free to replace the time buckets with the ones used internally:
+            </div>
+        </div>
+        <div class="table-holder">
+            <div id="question_38" class="hot handsontable htColumnHeaders"></div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect waves-light btn btn-submit" ng-click="save(38)">Save</a>
+            <!--<a href="" class="waves-effect waves-light btn btn-cancel">Cancel</a>-->
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--38 question end-->
+
+    <!--39 question start-->
+    <div class="section" ng-show="questions[39]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-40"
+                                           ng-model="questions[39].check"/>
+                <label for="indeterminate-checkbox-40">39. Foreign currency mismatch:</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[39].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[39].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="table-holder">
+            <div id="question_39" class="hot handsontable htColumnHeaders"></div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(39)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--39 question end-->
+
+    <!--40 question start-->
+    <div class="section" ng-show="questions[40]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-41"
+                                           ng-model="questions[40].check"/>
+                <label for="indeterminate-checkbox-41">40. Off-balance sheet items:</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[40].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[40].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+        <div class="table-holder">
+            <div id="question_40" class="hot handsontable htColumnHeaders"></div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(40)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--40 question end-->
+
+    <!--41 question start-->
+    <div class="section" ng-show="questions[41].data">
+        <h2>E. INTEGRITY CHECK</h2>
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-42"
+                                           ng-model="questions[41].check"/>
+                <label for="indeterminate-checkbox-42">41. For all shareholders with a stake of 5% or below, please
+                    provide responses to the following:</label>
+            </div>
+            <<div class="col s12 l2">
+            <div class="indicator-holder">
+                <div class="indicator-circle" ng-class="{'green': questions[41].status == 1}" tooltipped
+                     data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+            </div>
+        </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[41].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="table-holder">
+            <div class="checkbox-holder clearfix">
+                <input type="checkbox" class="filled-in" id="checkbox_a" ng-model="questions[41].data.item_1.check"/>
+                <label for="checkbox_a">a. On average, how small are these shareholdings?</label>
+                <div class="input-field col s12" style="margin: 15px 0 30px 0;">
+                    <input placeholder="Comment" id="shareholdings" type="text" class="validate"
+                           ng-model="questions[41].data.item_1.comment">
+                </div>
+                <div class="input-field row" style="margin: 15px 0 30px 0;">
+                    <div class="col s6">
+                        <input name="group3" type="radio" id="control-yes" ng-model="questions[41].data.item_1.radio"
+                               value="1"/>
+                        <label for="control-yes">Yes</label>
+                    </div>
+                    <div class="col s6">
+                        <input name="group3" type="radio" id="control-no" ng-model="questions[41].data.item_1.radio"
+                               value="2"/>
+                        <label for="control-no">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkbox-holder clearfix">
+                <input type="checkbox" class="filled-in" id="checkbox_b" ng-model="questions[41].data.item_2.check"/>
+                <label for="checkbox_b">b. Are they freely tradable if they are listed on a stock exchange?</label>
+                <div class="input-field col s12" style="margin: 15px 0 30px 0;">
+                    <input placeholder="Comment" id="exchange" type="text" class="validate"
+                           ng-model="questions[41].data.item_2.comment">
+                </div>
+
+            </div>
+
+            <div class="checkbox-holder clearfix">
+                <input type="checkbox" class="filled-in" id="checkbox_c" ng-model="questions[41].data.item_3.check"/>
+                <label for="checkbox_c">c. Do these shareholders vote at Annual General Meetings (AGMs)?</label>
+                <div class="input-field col s12" style="margin: 15px 0 30px 0;">
+                    <input placeholder="Comment" id="agms" type="text" class="validate"
+                           ng-model="questions[41].data.item_3.comment">
+                </div>
+
+            </div>
+
+            <div class="checkbox-holder clearfix">
+                <input type="checkbox" class="filled-in" id="checkbox_d" ng-model="questions[41].data.item_4.check"/>
+                <label for="checkbox_d">d. If they vote at AGMs, how are they identified for voting purposes?</label>
+                <div class="input-field col s12" style="margin: 15px 0 30px 0;">
+                    <input placeholder="Comment" id="voting-purposes" type="text" class="validate"
+                           ng-model="questions[41].data.item_4.comment">
+                </div>
+
+            </div>
+
+            <div class="checkbox-holder clearfix">
+                <input type="checkbox" class="filled-in" id="checkbox_e" ng-model="questions[41].data.item_5.check"/>
+                <label for="checkbox_e">e. Are there any voting blocks observable? If yes, which ones, and what % of
+                    votes do
+                    the larger blocks control?</label>
+            </div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(41)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--41 question end-->
+
+
+    <!--42 question start-->
+    <div class="section" ng-show="questions[42]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-43"
+                                           ng-model="questions[42].check"/>
+                <label for="indeterminate-checkbox-43">42. For shareholders with stakes of 5.0% or more that are legal
+                    entities or nomineeshareholders, please provide the ultimate beneficial owner(s) and
+                    shareholdingbreakdown (%):</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[42].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[42].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="table-holder">
+            <div class="input-field col s12">
+                <input placeholder="Comment" id="question_42" type="text" class="validate"
+                       ng-model="questions[42].data.comment">
+            </div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(42)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--42 question end-->
+
+    <!--43 question start-->
+    <div class="section" ng-show="questions[43]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-44"
+                                           ng-model="questions[43].check"/>
+                <label for="indeterminate-checkbox-44">43. Please provide the names of the top 10 group
+                    obligors:</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[43].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[43].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="table-holder">
+            <div id="question_43" class="hot handsontable htColumnHeaders"></div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(43)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--43 question end-->
+
+    <!--44 question start-->
+    <div class="section" ng-show="questions[44].data">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-45"
+                                           ng-model="questions[44].check"/>
+                <label for="indeterminate-checkbox-45">44. Please provide the names of the top 10 group depositors (only
+                    customers, no banks):</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[44].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[44].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+
+        <div class="table-holder">
+            <div id="question_44" class="hot handsontable htColumnHeaders"></div>
+        </div>
+
+        <div class="col s12" style="margin-top: 15px;">
+            <div class="question-description">
+                Please answer the following questions with regard to the following entities:
+                <ul>
+                    <li>The bank
+                        <div class="input-field col s12" style="margin: 15px 0 30px 0;">
+                            <input placeholder="Comment" id="subquestion_1" type="text"
+                                   ng-model="questions[44].data.addition[1].comment">
+                        </div>
+                    </li>
+
+                    <li>If the bank is listed, all shareholders with stake of over 5.0%; if the bank is not listed, all
+                        shareholders
+                        <div class="input-field col s12" style="margin: 15px 0 30px 0;">
+                            <input placeholder="Comment" id="subquestion_2" type="text"
+                                   ng-model="questions[44].data.addition[2].comment">
+                        </div>
+                    </li>
+
+                    <li>Parent and holding companies
+                        <div class="input-field col s12" style="margin: 15px 0 30px 0;">
+                            <input placeholder="Comment" id="subquestion_3" type="text"
+                                   ng-model="questions[44].data.addition[3].comment">
+                        </div>
+                    </li>
+
+                    <li>Ultimate beneficial owners
+                        <div class="input-field col s12" style="margin: 15px 0 30px 0;">
+                            <input placeholder="Comment" id="subquestion_4" type="text"
+                                   ng-model="questions[44].data.addition[4].comment">
+                        </div>
+                    </li>
+
+                    <li>Affiliates and subsidiaries
+                        <div class="input-field col s12" style="margin: 15px 0 30px 0;">
+                            <input placeholder="Comment" id="subquestion_5" type="text"
+                                   ng-model="questions[44].data.addition[5].comment">
+                        </div>
+                    </li>
+
+                    <li>Members of the board of directors or equivalent body
+                        <div class="input-field col s12" style="margin: 15px 0 30px 0;">
+                            <input placeholder="Comment" id="subquestion_6" type="text"
+                                   ng-model="questions[44].data.addition[6].comment">
+                        </div>
+                    </li>
+
+                    <li>Members of the management board or equivalent body or top managers of the bank
+                        <div class="input-field col s12" style="margin: 15px 0 30px 0;">
+                            <input placeholder="Comment" id="subquestion_7" type="text"
+                                   ng-model="questions[44].data.addition[7].comment">
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect  waves-light btn btn-submit" ng-click="save(44)">Save</a>
+            <a href="" class="waves-effect  waves-light btn btn-cancel">Cancel</a>
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--44 question end-->
+
+    <!--45 question start-->
+    <div class="section" ng-show="questions[45]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-46"
+                                           ng-model="questions[45].check"/>
+                <label for="indeterminate-checkbox-46">45. If any of the above are foreign entities, please indicate
+                    where they are incorporated,established or publicly listed</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[45].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[45].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description">
+                Please feel free to replace the time buckets with the ones used internally:
+            </div>
+        </div>
+        <div class="table-holder">
+            <div class="input-field col s12" style="margin: 15px 0 30px 0;">
+                <input placeholder="Comment" id="commentq_45" type="text" ng-model="questions[45].data.comment">
+            </div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect waves-light btn btn-submit" ng-click="save(45)">Save</a>
+            <!--<a href="" class="waves-effect waves-light btn btn-cancel">Cancel</a>-->
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--45 question end-->
+
+
+    <!--46 question start-->
+    <div class="section" ng-show="questions[46]">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-47"
+                                           ng-model="questions[46].check"/>
+                <label for="indeterminate-checkbox-47">46. Are you aware of any nominee shareholders in the bank’s
+                    shareholding structure?</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[46].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[46].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="input-field row" style="margin: 15px 0 30px 0;">
+            <div class="col s6">
+                <input name="group3" type="radio" id="question_46_control-yes"
+                       ng-model="questions[46].data.item_1.radio" value="1"/>
+                <label for="question_46_control-yes">Yes</label>
+            </div>
+            <div class="col s6">
+                <input name="group3" type="radio" id="question_46_control-no" ng-model="questions[46].data.item_1.radio"
+                       value="2"/>
+                <label for="question_46_control-no">No</label>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description">
+                please provide the names of the ultimate beneficial owners (if not already provided in #42).
+            </div>
+        </div>
+        <div class="table-holder">
+            <div class="input-field col s12" style="margin: 15px 0 30px 0;">
+                <input placeholder="Comment" id="commentq_46" type="text" ng-model="questions[46].data.comment">
+            </div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect waves-light btn btn-submit" ng-click="save(46)">Save</a>
+            <!--<a href="" class="waves-effect waves-light btn btn-cancel">Cancel</a>-->
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--46 question end-->
+
+
+    <!--47 question start-->
+    <div class="section" ng-show="questions[47].data">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-48"
+                                           ng-model="questions[47].check"/>
+                <label for="indeterminate-checkbox-48">47. If the ownership structure of the bank includes an
+                    intermediate jurisdiction, please provide:</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[47].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[47].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description">
+
+            </div>
+        </div>
+        <div class="table-holder">
+            <div class="checkbox-holder clearfix">
+                <input type="checkbox" class="filled-in" id="checkbox_47_a" ng-model="questions[47].data.item_1.check"/>
+                <label for="checkbox_47_a">a. The business reasons for the use of such intermediate
+                    jurisdiction.</label>
+                <div class="input-field col s12" style="margin: 15px 0 30px 0;">
+                    <input placeholder="Comment" id="checkbox_47_comment_a" type="text" class="validate"
+                           ng-model="questions[47].data.item_1.comment">
+                </div>
+
+            </div>
+            <div class="checkbox-holder clearfix">
+                <input type="checkbox" class="filled-in" id="checkbox_47_b" ng-model="questions[47].data.item_2.check"/>
+                <label for="checkbox_47_b">b. Supporting documents such as the advice of the bank’s legal or financial
+                    advisers.</label>
+                <div class="input-field col s12" style="margin: 15px 0 30px 0;">
+                    <input placeholder="Comment" id="checkbox_47_comment_b" type="text" class="validate"
+                           ng-model="questions[47].data.item_2.comment">
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect waves-light btn btn-submit" ng-click="save(47)">Save</a>
+            <!--<a href="" class="waves-effect waves-light btn btn-cancel">Cancel</a>-->
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--47 question end-->
+
+
+    <!--48 question start-->
+    <div class="section" ng-show="questions[48].data">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-49"
+                                           ng-model="questions[48].check"/>
+                <label for="indeterminate-checkbox-49">48. Have any of the persons/entities listed above, their close
+                    relatives or their subsidiaries or affiliates:</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[48].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[48].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+
+        <div class="table-holder">
+            <div class="checkbox-holder clearfix">
+                <input type="checkbox" class="filled-in" id="question_48_a" ng-model="questions[48].data.item_1.check"/>
+                <label for="question_48_a">a. Been involved in or associated with any criminal convictions?</label>
+                <div class="input-field row" style="margin: 15px 0 30px 0;">
+                    <div class="col s6">
+                        <input name="group_question_48_a_control" type="radio" id="question_48_a_control-yes" value="1"
+                               ng-model="questions[48].data.item_1.radio"/>
+                        <label for="question_48_a_control-yes">Yes</label>
+                    </div>
+                    <div class="col s6">
+                        <input name="group_question_48_a_control" type="radio" id="question_48_a_control-no" value="2"
+                               ng-model="questions[48].data.item_1.radio"/>
+                        <label for="question_48_a_control-no">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkbox-holder clearfix">
+                <input type="checkbox" class="filled-in" id="question_48_b" ng-model="questions[48].data.item_2.check"/>
+                <label for="question_48_b">b. Been or are currently under investigation by law enforcement or regulatory
+                    authorities?</label>
+                <div class="input-field row" style="margin: 15px 0 30px 0;">
+                    <div class="col s6">
+                        <input name="group_question_48_b_control" type="radio" id="question_48_b_control-yes" value="1"
+                               ng-model="questions[48].data.item_2.radio"/>
+                        <label for="question_48_b_control-yes">Yes</label>
+                    </div>
+                    <div class="col s6">
+                        <input name="group_question_48_b_control" type="radio" id="question_48_b_control-no" value="2"
+                               ng-model="questions[48].data.item_2.radio"/>
+                        <label for="question_48_b_control-no">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkbox-holder clearfix">
+                <input type="checkbox" class="filled-in" id="question_48_c" ng-model="questions[48].data.item_3.check"/>
+                <label for="question_48_c">c. Had or currently have political affiliations?
+                    If yes, please state the party, group or movement:</label>
+                <div class="input-field row" style="margin: 15px 0 30px 0;">
+                    <div class="col s6">
+                        <input name="group_question_48_c_control" type="radio" id="question_48_c_control-yes" value="1"
+                               ng-model="questions[48].data.item_3.radio"/>
+                        <label for="question_48_c_control-yes">Yes</label>
+                    </div>
+                    <div class="col s6">
+                        <input name="group-question_48_c_control" type="radio" id="question_48_c_control-no" value="2"
+                               ng-model="questions[48].data.item_3.radio"/>
+                        <label for="question_48_c_control-no">No</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="checkbox-holder clearfix">
+                <input type="checkbox" class="filled-in" id="question_48_d" ng-model="questions[48].data.item_4.check"/>
+                <label for="question_48_d">d. Made any political contributions above USD 10,000?</label>
+                <div class="input-field row" style="margin: 15px 0 30px 0;">
+                    <div class="col s6">
+                        <input name="group_question_48_d_control" type="radio" id="question_48_d_control-yes" value="1"
+                               ng-model="questions[48].data.item_4.radio"/>
+                        <label for="question_48_d_control-yes">Yes</label>
+                    </div>
+                    <div class="col s6">
+                        <input name="group_question_48_d_control" type="radio" id="question_48_d_control-no" value="2"
+                               ng-model="questions[48].data.item_4.radio"/>
+                        <label for="question_48_d_control-no">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkbox-holder clearfix">
+                <input type="checkbox" class="filled-in" id="question_48_e" ng-model="questions[48].data.item_5.check"/>
+                <label for="question_48_e">e. Reside or have physical presence in and/or undertake any commercial or
+                    political
+                    activities in countries or sectors and/or with entities referred to in the UN, EU or
+                    OFAC sanctions lists? <br>
+                    If yes, please specify where and what commercial or political activity:
+                </label>
+                <div class="input-field row" style="margin: 15px 0 30px 0;">
+                    <div class="col s6">
+                        <input name="group_question_48_e_control" type="radio" id="question_48_e_control-yes" value="1"
+                               ng-model="questions[48].data.item_5.radio"/>
+                        <label for="question_48_e_control-yes">Yes</label>
+                    </div>
+                    <div class="col s6">
+                        <input name="group_question_48_e_control" type="radio" id="question_48_e_control-no" value="2"
+                               ng-model="questions[48].data.item_5.radio"/>
+                        <label for="question_48_e_control-no">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkbox-holder clearfix">
+                <input type="checkbox" class="filled-in" id="question_48_f" ng-model="questions[48].data.item_6.check"/>
+                <label for="question_48_f">f. Been investigated for or convicted of misuse or misappropriation of public
+                    property?
+                </label>
+                <div class="input-field row" style="margin: 15px 0 30px 0;">
+                    <div class="col s6">
+                        <input name="group_question_48_f_control" type="radio" id="question_48_f_control-yes" value="1"
+                               ng-model="questions[48].data.item_6.radio"/>
+                        <label for="question_48_f_control-yes">Yes</label>
+                    </div>
+                    <div class="col s6">
+                        <input name="group3_question_48_f_control" type="radio" id="question_48_f_control-no" value="2"
+                               ng-model="questions[48].data.item_6.radio"/>
+                        <label for="question_48_f_control-no">No</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="checkbox-holder clearfix">
+                <input type="checkbox" class="filled-in" id="question_48_g" ng-model="questions[48].data.item_7.check"/>
+                <label for="question_48_g">g. Been investigated for or convicted of bribing of public officials or the
+                    use of
+                    inappropriate means to influence public decisions or processes?
+                </label>
+                <div class="input-field row" style="margin: 15px 0 30px 0;">
+                    <div class="col s6">
+                        <input name="group_question_48_g_control" type="radio" id="question_48_g_control-yes" value="1"
+                               ng-model="questions[48].data.item_7.radio"/>
+                        <label for="question_48_g_control-yes">Yes</label>
+                    </div>
+                    <div class="col s6">
+                        <input name="group_question_48_g_control" type="radio" id="question_48_g_control-no" value="2"
+                               ng-model="questions[48].data.item_7.radio"/>
+                        <label for="question_48_g_control-no">No</label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect waves-light btn btn-submit" ng-click="save(48)">Save</a>
+            <!--<a href="" class="waves-effect waves-light btn btn-cancel">Cancel</a>-->
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--48 question end-->
+
+
+    <!--49 question start-->
+    <div class="section" ng-show="questions[49].data">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-50"
+                                           ng-model="questions[49].check"/>
+                <label for="indeterminate-checkbox-50">49. How does the bank demonstrate commitment to
+                    anti-corruption?</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[49].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[49].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+
+        <div class="table-holder">
+            <div class="checkbox-holder clearfix">
+                <input type="checkbox" class="filled-in" id="question_49_a" ng-model="questions[49].data.item_1.check"/>
+                <label for="question_49_a">a. Is there a policy that has been approved by the board or senior
+                    management?</label>
+                <div class="input-field row" style="margin: 15px 0 30px 0;">
+                    <div class="col s6">
+                        <input name="group_question_49_c_control" type="radio" id="question_49_a_control-yes" value="1"
+                               ng-model="questions[49].data.item_1.radio"/>
+                        <label for="question_49_a_control-yes">Yes</label>
+                    </div>
+                    <div class="col s6">
+                        <input name="group_question_49_c_control" type="radio" id="question_49_a_control-no" value="2"
+                               ng-model="questions[49].data.item_1.radio"/>
+                        <label for="question_49_a_control-no">No</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="checkbox-holder clearfix">
+                <input type="checkbox" class="filled-in" id="question_49_b" ng-model="questions[49].data.item_2.check"/>
+                <label for="question_49_b">b. If yes, please provide a copy.</label>
+                <div class="input-field row" style="margin: 15px 0 30px 0;">
+                    <div class="col s6">
+                        <input name="group_question_49_d_control" type="radio" id="question_49_b_control-yes" value="1"
+                               ng-model="questions[49].data.item_2.radio"/>
+                        <label for="question_49_b_control-yes">Yes</label>
+                    </div>
+                    <div class="col s6">
+                        <input name="group_question_49_d_control" type="radio" id="question_49_b_control-no" value="2"
+                               ng-model="questions[49].data.item_2.radio"/>
+                        <label for="question_49_b_control-no">No</label>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect waves-light btn btn-submit" ng-click="save(49)">Save</a>
+            <!--<a href="" class="waves-effect waves-light btn btn-cancel">Cancel</a>-->
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--49 question end-->
+
+
+    <!--50 question start-->
+    <div class="section" ng-show="questions[50].data">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-51"
+                                           ng-model="questions[50].check"/>
+                <label for="indeterminate-checkbox-51">50. Is compliance regularly reviewed and audited?</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[50].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[50].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description">
+                <div class="input-field row">
+                    <div class="col s6">
+                        <input name="group3" type="radio" id="question_50_control-yes" value="1"
+                               ng-model="questions[50].data.item_1.check"/>
+                        <label for="question_50_control-yes">Yes</label>
+                    </div>
+                    <div class="col s6">
+                        <input name="group3" type="radio" id="question_50_control-no" value="2"
+                               ng-model="questions[50].data.item_1.check"/>
+                        <label for="question_50_control-no">No</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="table-holder">
+            <div class="checkbox-holder clearfix">
+                <!--<input type="checkbox" class="filled-in" id="checkbox_50_a"/>-->
+                <label for="checkbox_50_comment_a">a. By whom?</label>
+                <div class="input-field col s12" style="margin: 15px 0 30px 0;">
+                    <input placeholder="Comment" id="checkbox_50_comment_a" type="text" class="validate"
+                           ng-model="questions[50].data.item_1.comment">
+                </div>
+
+            </div>
+            <div class="checkbox-holder clearfix">
+                <!--<input type="checkbox" class="filled-in" id="checkbox_50_b"/>-->
+                <label for="checkbox_50_comment_b">b. When was the last audit conducted?</label>
+                <div class="input-field col s12" style="margin: 15px 0 30px 0;">
+                    <input placeholder="Comment" id="checkbox_50_comment_b" type="text" class="validate"
+                           ng-model="questions[50].data.item_2.comment">
+                </div>
+            </div>
+
+            <div class="checkbox-holder clearfix">
+                <!--<input type="checkbox" class="filled-in" id="checkbox_50_c"/>-->
+                <label for="checkbox_50_comment_c">c. What were the latest positive or negative findings?</label>
+                <div class="input-field col s12" style="margin: 15px 0 30px 0;">
+                    <input placeholder="Comment" id="checkbox_50_comment_c" type="text" class="validate"
+                           ng-model="questions[50].data.item_3.comment">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect waves-light btn btn-submit" ng-click="save(50)">Save</a>
+            <!--<a href="" class="waves-effect waves-light btn btn-cancel">Cancel</a>-->
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--50 question end-->
+
+
+    <!--51 question start-->
+    <div class="section" ng-show="questions[51].data">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-52"
+                                           ng-model="questions[51].check"/>
+                <label for="indeterminate-checkbox-52">51. Are there any consultants, agents or advisors involved in the
+                    bank’s trade finance
+                    business and operations?</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[51].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[51].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="question-description">
+
+            </div>
+        </div>
+        <div class="table-holder">
+            <div class="checkbox-holder clearfix">
+                <input type="checkbox" class="filled-in" id="checkbox_52_a" ng-model="questions[51].data.item_1.check"/>
+                <label for="checkbox_52_a">a. The business reasons for the use of such intermediate
+                    jurisdiction.</label>
+                <div class="input-field col s12" style="margin: 15px 0 30px 0;">
+                    <input placeholder="Comment" id="checkbox_51_comment_a" type="text" class="validate"
+                           ng-model="questions[51].data.item_1.comment">
+                </div>
+                <div class="input-field row">
+                    <div class="col s6">
+                        <input name="group_question_51_a_control" type="radio" id="question_51_a_control-yes" value="1"
+                               ng-model="questions[51].data.item_1.radio"/>
+                        <label for="question_51_a_control-yes">Yes</label>
+                    </div>
+                    <div class="col s6">
+                        <input name="group_question_51_a_control" type="radio" id="question_51_a_control-no" value="2"
+                               ng-model="questions[51].data.item_1.radio"/>
+                        <label for="question_51_a_control-no">No</label>
+                    </div>
+                </div>
+            </div>
+            <div class="checkbox-holder clearfix">
+                <input type="checkbox" class="filled-in" id="checkbox_51_b" ng-model="questions[51].data.item_2.check"/>
+                <label for="checkbox_51_b">b. Supporting documents such as the advice of the bank’s legal or financial
+                    advisers.</label>
+                <div class="input-field col s12" style="margin: 15px 0 30px 0;">
+                    <input placeholder="Comment" id="checkbox_52_comment_b" type="text" class="validate"
+                           ng-model="questions[51].data.item_2.comment">
+                </div>
+                <div class="input-field row">
+                    <div class="col s6">
+                        <input name="group_question_51_b_control" type="radio" id="question_51_b_control-yes" value="1"
+                               ng-model="questions[51].data.item_2.radio"/>
+                        <label for="question_51_b_control-yes">Yes</label>
+                    </div>
+                    <div class="col s6">
+                        <input name="group_question_51_b_control" type="radio" id="question_51_b_control-no" value="2"
+                               ng-model="questions[51].data.item_2.radio"/>
+                        <label for="question_51_b_control-no">No</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect waves-light btn btn-submit" ng-click="save(51)">Save</a>
+            <!--<a href="" class="waves-effect waves-light btn btn-cancel">Cancel</a>-->
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--51 question end-->
+
+
+    <!--52 question start-->
+    <div class="section" ng-show="questions[52].data">
+        <div class="row question-header">
+            <div class="col s12 l6"><input type="checkbox" id="indeterminate-checkbox-53"
+                                           ng-model="questions[52].check"/>
+                <label for="indeterminate-checkbox-53">52. Does the bank or its subsidiaries sell products to the
+                    military, or produce a militarized
+                    version of any of its products/services, or engage in chemical or fertilizer production?</label>
+            </div>
+            <div class="col s12 l2">
+                <div class="indicator-holder">
+                    <div class="indicator-circle" ng-class="{'green': questions[52].status == 1}" tooltipped
+                         data-position="top" data-delay="50" data-tooltip="Status: status"></div>
+                </div>
+            </div>
+            <div class="col s12 l4">
+                <!-- Action dropdown -->
+                <ng-action-dropdown ng-if="questions" question-id="{{questions[52].id}}" user-role="{{CURRENT_USER.user_role}}"> </ng-action-dropdown>
+            </div>
+        </div>
+
+        <div class="table-holder">
+            <div class="input-field row">
+                <div class="col s6">
+                    <input name="group_question_52_a_control" type="radio" id="question_52_a_control-yes" value="1"
+                           ng-model="questions[52].data.check"/>
+                    <label for="question_52_a_control-yes">Yes</label>
+                </div>
+                <div class="col s6">
+                    <input name="group_question_52_a_control" type="radio" id="question_52_a_control-no" value="2"
+                           ng-model="questions[52].data.check"/>
+                    <label for="question_52_a_control-no">No</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect waves-light btn btn-submit" ng-click="save(52)">Save</a>
+            <!--<a href="" class="waves-effect waves-light btn btn-cancel">Cancel</a>-->
+        </div>
+        <div class="divider clearfix"></div>
+    </div>
+    <!--52 question end-->
+
+
+    <div class="section">
+        <div class="col s12">
+            <label>Thank you very much for taking the time to answer these questions!</label>
+            <div class="col s12 buttons-holder clearfix">
+                <a href="" class="waves-effect  waves-light btn btn-submit">Save all</a>
+                <!--<a href="" class="waves-effect  waves-light btn btn-cancel">Cancel all</a>-->
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--Modals-->
+<!--<div ng-include="'/app/src/views/forms/forms_modals.html'"></div>-->
+
+<div id="userRelationModal" class="modal">
+    <div class="modal-content">
+        <div class="row">
+            <p>To assign question to anybody, just input users name in the field below.</p>
+            <tags-input ng-model="users"></tags-input>
+        </div>
+        <div class="col s12 buttons-holder clearfix">
+            <a href="" class="waves-effect waves-light btn btn-submit" ng-click="storeAssign()">Save</a>
+            <a href="" class="modal-actions modal-close waves-effect waves-light btn btn-cancel">Cancel</a>
+        </div>
+    </div>
+</div>
+
+<div id="userUnassignModal" class="modal">
+    <div class="modal-content">
+        <div class="row">
+            <div ng-repeat="user in selected_question.users">{{user.email}} <i class="material-icons" ng-click="unassignUser(user.id)">delete</i></div>
+        </div>
+    </div>
+</div>
+
+    <div id="commentsModal" class="modal">
+
+        <div id="global_add_comments_form" ng-show="visibleReplyForm">
+            <div class="col s12">
+                <div class="input-field col s12">
+                    <form ng-submit="storeComment(temp_comment_id, temp_comment_index)">
+                        <div class="input-field col s12">
+                            <input type="text" ng-model="comment_tmp_reply"/>
+                            <label>New reply</label>
+                            <button type="submit" class="waves-effect waves-light btn right" >Send</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-content">
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <h4>Leave comment:</h4>
+
+                        <div class="input-field col s12">
+
+                            <input type="text" id="comment-input" ng-model="new_comment"/>
+                            <label for="comment-input">New comment</label>
+                            <a class="waves-effect waves-light btn right" ng-click="storeComment()">Send</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+
+            <div class="row form-holder" ng-show="comments.length > 0">
+                <form class="col s12 recent-comments">
+                    <h4>Recent comments:</h4>
+                    <div class="row">
+                        <ul class="collection">
+                            <li class="collection-item" ng-repeat="comment in comments">
+                                <div class="row">
+                                    <div class="col s12">
+                                        <div class="chip user-mail right">
+                                            {{comment.user.email}}
+                                        </div>
+                                    </div>
+                                    <div class="col s12">
+                                        <div class="comment-time right">
+                                            {{comment.date*1000 | date:'medium'}}
+                                        </div>
+                                    </div>
+                                    <div class="col s12">
+                                        <p class="comment">{{comment.comment}}</p>
+                                        <a href="" ng-click="showReplyForm(comment.id, $index)">Reply</a>
+                                    </div>
+                                    <div class="col s12" id="tmp_add_comments_form{{comment.id}}">
+                                    </div>
+                                </div>
+                                <div class="replies-bg">
+                                    <div class="reply-comment">
+                                        <div class="row" ng-repeat="reply in comment.replies">
+                                            <div class="input-field col s12">
+                                                <div class="row">
+                                                    <div class="col s12">
+
+                                                        <div class="chip user-mail right">
+                                                            {{reply.user.email}}
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col s12">
+                                                        <div class="comment-time  right">
+                                                            {{reply.date*1000 | date:'medium'}}
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="col s12">
+                                                        <p class="comment">{{reply.comment}}</p>
+                                                    </div>
+                                                    <div class="col s12">
+                                                        <a href="" ng-click="showReplyForm(comment.id, $index)">Reply</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col s12 buttons-holder clearfix">
+                <!--<a href="" class="waves-effect waves-light btn btn-submit" ng-click="test()">Save</a>-->
+                <a href="" class="modal-action modal-close waves-effect waves-light btn btn-cancel right">Close</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+

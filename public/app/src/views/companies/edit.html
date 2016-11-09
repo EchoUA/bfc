@@ -1,0 +1,36 @@
+<div class="container">
+    <form ng-submit="edit()" class="col s12">
+        <h5>Edit</h5>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="first_name" type="text" class="validate" ng-model="data.name">
+                <label for="first_name">Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="code" type="text" class="validate" ng-model="data.code">
+                <label for="code">Bank code</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="file-field input-field col s12">
+                <p>Company logo</p>
+                <div class="btn" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB">File</div>
+                <div class="file-path-wrapper">
+                    <img src="/storage/companies/avatars/{{data.logo}}" alt="icon" class="circle responsive-img" style="width: 200px" ng-show="data.logo && !file">
+                    <img ngf-thumbnail="file" style="width: 200px" ng-show="file">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+        <div class="input-field col s12">
+        <select class="" id="user-assign" ng-model="data.bcp" material-select watch ng-options="user.id as user.name for user in available_users">
+        </select>
+            <label for="user-assign">BCP name</label>
+        </div>
+        </div>
+
+        <button type="submit" class="waves-effect waves-light btn">Save</button>
+    </form>
+</div>

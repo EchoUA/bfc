@@ -1,0 +1,29 @@
+//progress bar for table ready state
+.progress {
+  background-color: rgba(84, 134, 196, 0.3);
+  border-radius: 3px;
+  margin: 30px 0;
+
+  //standart state
+  .determinate{
+    background-color: #5486c4;
+  }
+  //red state (danger)
+  &.danger{
+    .determinate{
+      background-color: #ee5561;
+    }
+    height: 18px;
+    background-color: rgba(238, 85, 97, 0.3);
+    border-radius: 3px;
+  }
+  //ready state
+  &.done{
+    .determinate{
+      background-color: #4a6c36;
+    }
+    height: 18px;
+    background-color: rgba(106, 153, 77, 0.3);
+    border-radius: 3px;
+  }
+}
